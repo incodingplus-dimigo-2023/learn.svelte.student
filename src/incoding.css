@@ -1,0 +1,37 @@
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 5px
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0)
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #888
+}
+
+:root {
+	--sk-theme-3: hsl(15, 100%, 63%);
+	--sk-theme-1: hsl(204, 100%, 50%);
+	--sk-theme-3-variant: hsl(15, 100%, 63%);
+	--sk-theme-1-variant: hsl(204, 100%, 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--sk-theme-3: hsl(15, 100%, 63%);
+		--sk-theme-1: hsl(204, 100%, 55%);
+		--sk-theme-3-variant: hsl(15, 100%, 50%);
+		--sk-theme-1-variant: hsl(204, 100%, 40%);
+	}
+}
+
+.text blockquote{
+	filter: drop-shadow(2px 2px 6px hsla(204, 100%, 50%, 0.2))
+}

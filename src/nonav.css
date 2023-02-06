@@ -1,0 +1,8 @@
+body > div:nth-child(1) > nav{
+    display: none !important;
+}
+
+#main{
+    top:0 !important;
+    height: 100vh;
+}
