@@ -52,17 +52,11 @@ export interface Exercise {
 	/** the initial path to navigate to */
 	path: string;
 	slug: string;
-	prev: { slug: string; title: string } | null;
-	next: { slug: string; title: string } | null;
-	html: string;
+	prev: string | null;
+	next: string | null;
 	dir: string;
 	home?:string[];
-	editing_constraints: {
-		create: string[];
-		remove: string[];
-	};
 	a: Record<string, Stub>;
-	b: Record<string, Stub>;
 }
 
 export interface ExerciseRaw {
@@ -70,18 +64,17 @@ export interface ExerciseRaw {
 	path: string;
 	focus: string;
 	slug: string;
-	prev: { slug: string; title: string } | null;
-	next: { slug: string; title: string } | null;
+	prev: string | null;
+	next: string | null;
 	meta: any;
-	markdown: string;
 	dir: string;
 }
 
 export interface ExerciseStub {
 	title: string;
 	slug: string;
-	prev: { slug: string; title: string } | null;
-	next: { slug: string; title: string } | null;
+	prev: string | null;
+	next: string | null;
 }
 
 export interface ChapterStub {
@@ -99,4 +92,10 @@ export interface PartStub {
 export interface EditingConstraints {
 	create: string[];
 	remove: string[];
+}
+
+export interface iMeta{
+	title:string;
+	scope:Scope;
+	focus?:string;
 }

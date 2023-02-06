@@ -8,7 +8,7 @@
 	import { state } from './state.js';
 
 	/** @type {string} */
-	export let path;
+	export let path = '/';
 
 	/** @type {HTMLIFrameElement} */
 	let iframe;
@@ -39,7 +39,7 @@
 				}
 
 				loading = false;
-			} else if (state.status === 'update' && !state.home && state.last_updated) {
+			} else if (state.status === 'update' && state.last_updated) {
 				const reload = await adapter.update([state.last_updated]);
 				if (reload === true) {
 					schedule_iframe_reload();
@@ -69,9 +69,6 @@
 	async function reset_adapter(state) {
 		let reload_iframe = true;
 		let stubs = state.stubs;
-		if(state.home){
-			stubs = Object.values(state.exercise.solution);
-		}
 		if (adapter) {
 			const result = await adapter.reset(stubs);
 			if (result === 'cancelled') {
@@ -203,9 +200,9 @@
 		flex-direction: column;
 		position: relative;
 		min-height: 0;
-		height: 100%;
-		max-height: 100%;
-		background: var(--sk-back-2);
+		flex-grow: 1;
+		/* height: calc(100vh - 4rem);
+		max-height: calc(100vh - 4rem); */
 		--menu-width: 5.4rem;
 	}
 

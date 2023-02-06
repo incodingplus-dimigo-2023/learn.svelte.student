@@ -99,7 +99,9 @@
 		--cutout: #fff;
 		position: absolute;
 		width: 100%;
+		box-sizing: border-box;
 		height: 100%;
+		max-height: 100%;
 		top: 0;
 		left: 0;
 		padding: 2rem;
