@@ -6,6 +6,6 @@
     const target = "_blank"
 </script>
 
-<a href={google} target={target}>구글</a>
-<a href={naver} target={target}>네이버</a>
-<a href={incoding} target={target}>인코딩학원</a>
+<a href="http://{google}" target={target}>구글</a>
+<a href="http://{naver}"target={target}>네이버</a>
+<a href="http://{incoding}" target={target}>인코딩학원</a>
