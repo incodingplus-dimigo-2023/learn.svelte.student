@@ -21,8 +21,6 @@
 		color: white;
 	}
 
-	.btn-container {
-	}
 
 	button {
 		border-style: solid;
