@@ -6,6 +6,6 @@
     const target = "_blank"
 </script>
 
-<a>구글</a>
-<a>네이버</a>
+<a >구글</a>
+<a >네이버</a>
 <a>인코딩학원</a>
