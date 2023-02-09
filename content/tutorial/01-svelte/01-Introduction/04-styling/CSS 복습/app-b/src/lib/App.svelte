@@ -12,11 +12,13 @@
 
 <style>
 	.container {
-	
+		background-color: black;
+		padding: 50px;
+		color: white;
 	}
 
 	.btn-container {
-		
+		margin-top: 30px;
 	}
 
 	button {
@@ -31,16 +33,20 @@
 	}
 
 	.doc {
-
+		border-color: #ea2845;
+		background-color: #ea2845;
 	}
 	.doc:hover {
-
+		background-color: black;
 	}
 
 	.git {
-	
+		border-color: white;
+		background-color: black;
+		color: white;
 	}
 	.git:hover {
-		
+		border-color: #ea2845;
+		color: #ea2845;
 	}
 </style>
