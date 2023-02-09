@@ -1,5 +1,5 @@
 <div class="container">
-	<h3 class="h">Hello, nest!</h3>
+	<h1 class="h">Hello, nest!</h1>
 	<div id="text">
 		A progressive Node.js framework for building efficient, reliable 
 		<br>
@@ -21,14 +21,17 @@
 
 	.h {
 		margin-left: 40px;
+		font-size: 40px;
 	}
 
 	#text {
 		margin-left: 40px;
+		margin-top: -20px;
 		margin-bottom: 10px;
 	}
 	.btn-container {
-		margin-left: 40px;
+		margin-left: 10px;
+		margin-top: 40px;
 	}
 
 	button {
