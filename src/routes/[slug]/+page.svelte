@@ -14,7 +14,6 @@
         const socket = ioClient(location.origin);
         socket.on('message', /** @param {import('fs/promises').FileChangeInfo<string> & {mtimeMs:number}} e*/ async e => {
             let num = map.get(e.filename) ?? 0;
-            console.log(num);
             if(Math.abs(e.mtimeMs - num) < 100){
                 if(e.mtimeMs > num) map.set(e.filename, e.mtimeMs);
                 return
