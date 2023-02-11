@@ -1,0 +1,8 @@
+#!bin/bash
+git pull;
+for i in 강경호 강연우 김동규 김태현 이루미 이형주 손준혁 황해린
+do
+    git checkout $i
+    git merge main
+    git push
+done
