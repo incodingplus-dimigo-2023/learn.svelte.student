@@ -2,15 +2,17 @@
 	let a = true;
 	let b = true;
 
+	$: and = a && b;
+	$: or = a || b;
 </script>
 
 <div>
-	<div>A: </div>
-	<div>B: </div>
+	<div>A: {a}</div>
+	<div>B: {b}</div>
 </div>
 <div>
-	<div>A && B: </div>
-	<div>A || B: </div>
+	<div>A && B: {and}</div>
+	<div>A || B: {or}</div>
 </div>
 
 <style>
