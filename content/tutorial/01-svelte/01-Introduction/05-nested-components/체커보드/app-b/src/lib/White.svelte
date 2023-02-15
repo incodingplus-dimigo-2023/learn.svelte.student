@@ -2,9 +2,11 @@
 
 <style>
     div {
-        background: white;
+        background-color: white;
+        width: 50px;
+		height: 50px;
     }
     div:hover {
-        background: blue;
+        background-color: blue;
     }
 </style>
