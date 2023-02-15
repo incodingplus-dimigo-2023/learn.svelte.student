@@ -1,6 +1,6 @@
 <div class="container">
-	<h1>Hello, nest!</h1>
-	<div>
+	<h1 class="white">Hello, nest!</h1>
+	<div class="white">
 		A progressive Node.js framework for building efficient, reliable and scalable server-side
 		applications.
 	</div>
@@ -45,5 +45,8 @@
 	}
 	.git:hover {
 		color: #ea2845;
+	}
+	.white {
+		color: white;
 	}
 </style>
