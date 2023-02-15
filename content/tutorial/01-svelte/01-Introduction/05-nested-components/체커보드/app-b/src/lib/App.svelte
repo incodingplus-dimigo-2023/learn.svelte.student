@@ -68,7 +68,7 @@
 	.flex-container{
 		display: inline-flex;
 	}
-	.flex-container > div{
+	/* .flex-container > div{
 		display:flex;
-	}
+	} */
 </style>
