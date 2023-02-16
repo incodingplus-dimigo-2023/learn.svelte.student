@@ -7,7 +7,9 @@
 
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			arr = arr.concat(i);
+			i++;
+			if (i > MAX) clearInterval(interval);
 		}, 100)
 	}
 
@@ -16,7 +18,9 @@
 
 		let i = 2;
 		const interval = setInterval(() => {
-			
+			arr = arr.filter((v) => v === i || v % i !== 0);
+			i++;
+			if (i > Math.sqrt(MAX)) clearInterval(interval);
 		}, 100)
 	}
 
