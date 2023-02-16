@@ -1,9 +1,13 @@
 <script>
-	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
+	let html = `<img src='/img.gif' style="width:10%;height:20%;">`;
 	let str = '';
-	let count = 0;
-	let setT = 0
+  setInterval(()=> {
+    str = `${str} ${html}`
+  }, 1000);
+
+
 </script>
+<br>
 <div>
 	{@html str}
 </div>
