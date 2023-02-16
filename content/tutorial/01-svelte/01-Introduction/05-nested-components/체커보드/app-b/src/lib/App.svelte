@@ -28,7 +28,7 @@
     <White />
     <Black />
   </div>
-  <div class="내가 만든 쿠키">
+  <div class="내가 만든 쿸히">
     <Black />
     <White />
     <Black />
