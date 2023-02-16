@@ -1,30 +1,24 @@
 <script>
 	let number = 5;
-	let interval = null;
-  let good = true;
+	let interval = setInterval(() =>{
+		number--
+	}, 1000)
 
 
 	const reset = () => {
 		number = 5;
+		clearInterval(interval)
 	};
 	const pause = () => {
-		if(good){
-      good = false;
-    } else {
-      good = true;
-    }
+		clearInterval(interval)
 	};
 	const start = () => {
-    if(good){
-		setInterval(() => {
-		number -= 1;
+		interval = setInterval(() =>{
+			number--
+	}, 1000)
     if(number === 0){
-      alert("종료")
-      good = false;
-    }
-    }
-	, 1000);
-  }
+      alert("종료");
+    }	
 	};
 </script>
 

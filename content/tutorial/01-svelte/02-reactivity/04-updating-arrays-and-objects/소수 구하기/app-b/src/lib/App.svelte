@@ -7,12 +7,17 @@
 
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			if(i <= MAX){
+				i++
+			arr.push(i - 1);
+			console.log(arr)
+
+			}
 		}, 100)
 	}
 
 	const calculate = () => {
-		arr = [...arr.slice(1)]
+		 arr = [...arr.slice(1)]
 
 		let i = 2;
 		const interval = setInterval(() => {
@@ -26,7 +31,7 @@
 <button on:click={calculate}>계산</button>
 
 <div class="container">
-	{@html arr.map(n => `<div>${n}</div>`).join("")}
+	{@html arr.map(n => `<div>${n}</div>`).join(" ")}
 </div>
 
 <style>
@@ -40,5 +45,4 @@
 		width: 5vw;
 		height: 5vw;
 	}
-
 </style>
