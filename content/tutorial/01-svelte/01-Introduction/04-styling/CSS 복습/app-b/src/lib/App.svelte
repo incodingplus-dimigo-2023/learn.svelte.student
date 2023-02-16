@@ -31,6 +31,7 @@
 		color: white;
 		margin: 0px 30px;
 	}
+	
 	.doc {
       background-color: #ea2845;
       border-color: #ea2845;
