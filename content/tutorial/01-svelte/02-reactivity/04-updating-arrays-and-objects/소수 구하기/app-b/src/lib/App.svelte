@@ -7,16 +7,30 @@
 
 		let i = 1;
 		const interval = setInterval(() => {
-		
-		}, 100)
+			if(i > 100){
+				clearInterval(interval);
+				return;
+			}
+		 arr = [...arr, i];
+		 i++;
+		}, 10)
 	}
 
 	const calculate = () => {
 		arr = [...arr.slice(1)]
-
 		let i = 2;
 		const interval = setInterval(() => {
-			
+				if(i > 11){
+				clearInterval(interval);
+				return;
+			}
+			arr.map((arr1, j)=>{
+				if(Number(arr1) % i === 0&&Number(arr1) !== i){
+					arr.splice(j, 1)
+				}
+			})
+			arr = arr;
+			i++;
 		}, 100)
 	}
 
