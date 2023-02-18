@@ -1,8 +1,7 @@
 <script>
 	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
 	let str = '';
-	let count = 0;
-	let setT = 0
+	setInterval(() => str += html, 100);
 </script>
 <div>
 	{@html str}
