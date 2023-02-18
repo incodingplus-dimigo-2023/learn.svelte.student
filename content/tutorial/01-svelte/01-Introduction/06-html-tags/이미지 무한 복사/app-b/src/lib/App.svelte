@@ -6,7 +6,7 @@
 
 	setInterval(() => {
 		str = str + html
-	},1000)
+	},100)
 </script>
 <div>
 	{@html str}
