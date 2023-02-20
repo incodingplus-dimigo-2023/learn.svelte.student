@@ -1,16 +1,22 @@
 <script>
 	let a = true;
 	let b = true;
+	const changeA = () => {
+		a = Boolean(!a)
+	};
+	const changeB = () => {
+		b = Boolean(!b)
 
+	};
 </script>
 
 <div>
-	<div>A: </div>
-	<div>B: </div>
+	<div on:click={changeA}>A: {a}</div>
+	<div on:click={changeB}>B: {b}</div>
 </div>
 <div>
-	<div>A && B: </div>
-	<div>A || B: </div>
+	<div>A && B: {Boolean((a && b))}</div>
+	<div>A || B: {Boolean((a || b))}</div>
 </div>
 
 <style>
