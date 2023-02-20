@@ -1,25 +1,38 @@
 <script>
 	let number = 5;
-	let interval = null;
+	let click = 0;
+	let interval = null
 
 	const reset = () => {
-		
+		number = 5
+		if(click === 1){
+			clearInterval(interval);
+			click--
+		}
 	};
 	const pause = () => {
-		
+		clearInterval(interval);
 	};
 	const start = () => {
-		
+		click++
+		interval = setInterval(() => {
+			number--
+			if(number === 0){
+				clearInterval(interval);
+				alert('종료');
+			}
+		}, 1000);
 	};
+	
 </script>
 
 <div>
 	<div class="number">{number}</div>
 </div>
 <div>
-	<button>시작</button>
-	<button>일시 정지</button>
-	<button>초기화</button>
+	<button on:click={start}>시작</button>
+	<button on:click={pause}>일시 정지</button>
+	<button on:click={reset}>초기화</button>
 </div>
 
 <style>
