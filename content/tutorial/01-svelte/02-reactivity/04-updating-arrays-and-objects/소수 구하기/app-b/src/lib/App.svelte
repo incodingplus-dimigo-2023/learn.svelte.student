@@ -5,18 +5,33 @@
 	const generate = () => {
 		arr = []
 
-		let i = 1;
+		let i = 0;
 		const interval = setInterval(() => {
-		
-		}, 100)
+			i = i + 1;
+			arr = [...arr, i]
+			if(i === MAX) {
+				clearInterval(interval)
+			}
+		}, 1)
 	}
 
 	const calculate = () => {
-		arr = [...arr.slice(1)]
+		//arr = [...arr.slice(1)]
 
 		let i = 2;
 		const interval = setInterval(() => {
-			
+			for(let j = 0; j < MAX; j++) {
+				for(let i = 2; i < j; i++) {
+					if(arr[i] % i === 0) {
+						console.log(i);
+						const remove = [...arr.splice(i,1)];
+					}
+					if(j === MAX - 1) {
+						console.log('finish');
+						clearInterval(interval);
+					}
+				}
+			}
 		}, 100)
 	}
 
