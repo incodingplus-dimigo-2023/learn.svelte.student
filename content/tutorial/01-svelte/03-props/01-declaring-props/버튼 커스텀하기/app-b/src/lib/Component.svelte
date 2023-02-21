@@ -4,8 +4,8 @@
 </script>
 
 <button>
-    <img>
-    <div></div>
+        <img>
+        <div>{name}</div>
 </button>
 
 <style>

@@ -3,6 +3,9 @@
     export let korean;
     export let math;
     export let english;
+    export let kgrade;
+    export let mgrade;
+    export let egrade;
 
     const getGrade = (score) => {
       
@@ -20,15 +23,15 @@
         </tr>
         <tr>
             <td>점수</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{korean}</td>
+            <td>{math}</td>
+            <td>{english}</td>
         </tr>
         <tr>
             <td>등급</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{kgrade}</td>
+            <td>{mgrade}</td>
+            <td>{egrade}</td>
         </tr>
     </table>
 </div>
