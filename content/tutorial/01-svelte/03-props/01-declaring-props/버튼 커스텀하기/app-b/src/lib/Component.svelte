@@ -3,8 +3,8 @@
     export let color;
 </script>
 
-<button>
-        <img>
+<button style="color: {color}; border: 1px solid {color}; border-radius: 100px;">
+        <img src="/{name}.png">
         <div>{name}</div>
 </button>
 

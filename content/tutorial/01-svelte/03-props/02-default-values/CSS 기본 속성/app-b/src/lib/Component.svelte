@@ -2,37 +2,15 @@
     export let bcolor;
     export let color;
     export let padding;
-    const arr = [
-        {
-            bcolor: "transparent",
-            color: "canvastex",
-            padding: "0",
-        },
-        {
-            bcolor: "canvastex",
-            color: "#3FB984",
-            padding: "0",
-        },
-        {
-            bcolor: "blue",
-            color: "red",
-            padding: "0",
-        },
-        {
-            bcolor: "blue",
-            color: "red",
-            padding: "100px",
-        },
-    ];
 </script>
 
 <div class="container">
     <div>
-        <div>background-color: {arr[1]};</div>
+        <div>background-color: {bcolor};</div>
         <div>
-            color: {arr[1]};
+            color: {color};
         </div>
-        <div>padding: {arr[1]};</div>
+        <div>padding: {padding};</div>
     </div>
     <div class="view">텍스트</div>
 </div>
