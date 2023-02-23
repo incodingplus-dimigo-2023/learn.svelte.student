@@ -2,11 +2,13 @@
 	let characters = []
 
 	const createCharacter = () => {
-		let HP;
-		let ATK;
-		let DEF;
-		let STAR;
-
+		let HP = Math.floor(Math.random() * 200);
+		let ATK = Math.floor(Math.random() * 200);
+		let DEF = Math.floor(Math.random() * 200);
+		let STAR = Math.floor((HP + ATK + DEF) / 100);
+		
+		console.log(HP,ATK,DEF,STAR);
+		
 		return {
 			HP,
 			ATK,
@@ -16,11 +18,10 @@
 	}
 
 	const spawn = () => {
-		
 	}
 </script>
 
-<button>소환</button>
+<button on:click={spawn}>소환</button>
 <div class="container">
 	<div class="character">
 		<h1></h1>
