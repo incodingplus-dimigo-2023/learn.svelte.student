@@ -12,13 +12,13 @@
 <div on:click={toggle}>
 
 <input type="password" placeholder="선생님 코드를 입력해주세요">	
-	선생님 모드: True;
+	선생님 모드: True
 </div>
 {:else}
 	<div on:click={toggle}>
 		<input type="text" placeholder="아이디를 입력해주세요">
 		<input type="password" placeholder="비밀번호를 입력해주세요">	
-	선생님 모드: false;
+	선생님 모드: false
 </div>
 {/if}
 
