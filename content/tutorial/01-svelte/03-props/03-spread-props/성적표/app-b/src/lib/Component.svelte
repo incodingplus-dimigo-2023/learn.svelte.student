@@ -6,6 +6,18 @@
 
     const getGrade = (score) => {
       
+              if(Number(score) >= 90){
+                return 'A'
+              }else if(Number(score >= 80)){
+                return 'B'
+              }else if(Number(score >= 70)){
+                return 'C'
+              }else if(Number(score >= 60)){
+                return 'D'
+              }else{
+                return 'E'
+              }
+              
     }
 </script>
 
@@ -20,15 +32,15 @@
         </tr>
         <tr>
             <td>점수</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{korean}</td>
+            <td>{math}</td>
+            <td>{english}</td>
         </tr>
         <tr>
             <td>등급</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{getGrade(korean)}</td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
     </table>
 </div>

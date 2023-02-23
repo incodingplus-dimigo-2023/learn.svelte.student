@@ -18,3 +18,6 @@
 		english: 100
 	}]
 </script>
+{#each arr as arr1, i}
+<Component {...arr1}/>
+{/each}

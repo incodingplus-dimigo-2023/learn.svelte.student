@@ -1,4 +1,4 @@
-<script>
+git checkout 강경호<script>
 	let number = 0;
 	let multiplicationTable = ``;
 

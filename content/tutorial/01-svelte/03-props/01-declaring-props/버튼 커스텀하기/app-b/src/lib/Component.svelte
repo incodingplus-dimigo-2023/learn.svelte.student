@@ -3,9 +3,10 @@
     export let color;
 </script>
 
-<button>
-    <img>
-    <div></div>
+<button style=" border-color: {color}">
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <img src="{name}.png">
+    <div style="color: {color};">{name}</div>
 </button>
 
 <style>

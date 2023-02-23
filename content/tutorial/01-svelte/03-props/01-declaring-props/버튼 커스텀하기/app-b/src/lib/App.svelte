@@ -12,3 +12,6 @@
 		color: "#FF3E00"
 	}]	
 </script>
+{#each arr as {name, color}, i}
+<Component name="{name}" color="{color}" />
+{/each}
