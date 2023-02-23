@@ -13,8 +13,8 @@
 </script>
 
 <div class="container">
-    <div>신장 : </div>
-    <div>체중 : </div>
+    <div>신장 : {height}</div>
+    <div>체중 : {weight}</div>
     <div>BMI : </div>
 
 </div>
@@ -27,6 +27,6 @@
     }
 
     .danger {
-        color: red
+        color: red;
     }
 </style>
