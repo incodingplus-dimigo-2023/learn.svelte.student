@@ -9,6 +9,7 @@
 	let starnum;
 	var stars = ["", "★", "★★", "★★★", "★★★★", "★★★★★", "★★★★★★"];
 	let container;
+	let ch;
 	const createCharacter = () => {
 		CNT = count + 1;
 		HP = Math.floor(Math.random() * 201);
@@ -16,20 +17,19 @@
 		DEF = Math.floor(Math.random() * 201);
 		starnum = Math.floor((HP + ATK + DEF) / 100);
 		STARMARK = stars[starnum];
-
-		characters[count] = {
+		ch = {
 			CNT,
 			HP,
 			ATK,
 			DEF,
 			STARMARK,
 		};
+
+		characters[count] = ch;
 		count++;
 	};
 
-	// const spawn = () => {
-
-	// };
+	console.log(ch);
 </script>
 
 <button on:click={createCharacter}>소환</button>
