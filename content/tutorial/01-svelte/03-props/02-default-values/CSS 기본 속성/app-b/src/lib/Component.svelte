@@ -1,14 +1,16 @@
 <script>
-
+    export let backgroundcolor;
+    export let color;
+    export let padding;
 </script>
 
 <div class="container">
     <div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>background-color: {backgroundcolor};</div>
+        <div>color: {color};</div>
+        <div>padding: {padding};</div>
     </div>
-    <div class="view">텍스트</div>
+    <div class="view" style="background-color: {backgroundcolor}; color: {color}; padding: {padding}">텍스트</div>
 </div>
 
 <style>
