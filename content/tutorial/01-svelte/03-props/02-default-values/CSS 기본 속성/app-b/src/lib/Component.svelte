@@ -1,14 +1,16 @@
 <script>
-
+    export let backcolor = 'blue';
+    export let clor = 'red';
+    export let pad = 0;
 </script>
 
 <div class="container">
     <div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>background-color: {backcolor};</div>
+        <div>color: {clor};</div>
+        <div>padding: {pad};</div>
     </div>
-    <div class="view">텍스트</div>
+    <div class="view" style="background-color: {backcolor}; color: {clor}; padding: {pad};">텍스트</div>
 </div>
 
 <style>
