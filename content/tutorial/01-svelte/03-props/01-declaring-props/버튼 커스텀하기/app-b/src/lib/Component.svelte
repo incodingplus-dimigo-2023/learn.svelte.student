@@ -4,8 +4,8 @@
 </script>
 
 <button>
-    <img>
-    <div></div>
+    <img src="{name}.png">
+    <div style="color: {color}">{name}</div>
 </button>
 
 <style>
@@ -30,5 +30,6 @@
         font-size: 80px;
         margin-left: 30px;
         font-weight: bold;
+        
     }
 </style>

@@ -11,4 +11,9 @@
 		name: "svelte",
 		color: "#FF3E00"
 	}]	
+	console.log(arr[0].name, arr[0].color);
 </script>
+<Component name =  "{arr[0].name}" color =  "{arr[0].color}"></Component>
+<Component name =  "{arr[1].name}" color =  "{arr[1].color}"></Component>
+<Component name =  "{arr[2].name}" color =  "{arr[2].color}"></Component>
+

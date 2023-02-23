@@ -1,40 +1,34 @@
 <script>
-	let arr = []
-	const MAX = 100
+    let arr = [];
+    const MAX = 100;
+    let interval = 0;
 
-	const generate = () => {
-		arr = []
+    const generate = () => {
+        arr = [];
+        clearInterval(interval);
+        let i = 1;
+        interval = setInterval(() => {
+            arr = [...arr, i++];
+            if (i === 101) clearInterval(interval);
+        }, 20);
+    };
 
-		let i = 0;
-		const interval = setInterval(() => {
-			i = i + 1;
-			arr = [...arr, i]
-			if(i === MAX) {
-				clearInterval(interval)
-			}
-		}, 1)
-	}
-
-	const calculate = () => {
-		//arr = [...arr.slice(1)]
-
-		let i = 2;
-		const interval = setInterval(() => {
-			for(let j = 0; j < MAX; j++) {
-				for(let i = 2; i < j; i++) {
-					if(arr[i] % i === 0) {
-						console.log(i);
-						const remove = [...arr.splice(i,1)];
-					}
-					if(j === MAX - 1) {
-						console.log('finish');
-						clearInterval(interval);
-					}
-				}
-			}
-		}, 100)
-	}
-
+    const calculate = () => {
+        clearInterval(interval);
+        let i = 2;
+        interval = setInterval(() => {
+            for (let k = i; k <= 100; k++) {
+                for (let j = 2; j * j <= k; j++) {
+                    if (k % j === 0) {
+                        i = k + 1;
+                        let index = arr.indexOf(k);
+                        arr = [...arr.slice(0, index), ...arr.slice(index + 1)];
+                        return;
+                    }
+                }
+            }
+        }, 20);
+    };
 </script>
 
 <button on:click={generate}>생성</button>
