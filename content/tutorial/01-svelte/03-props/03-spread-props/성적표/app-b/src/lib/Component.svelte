@@ -3,46 +3,19 @@
     export let korean;
     export let math;
     export let english;
-    export let kgrade;
-    export let mgrade;
-    export let egrade;
 
-    const getGrade = () => {
-        if (korean > 90 && korean >= 100) {
-            kgrade = A;
-        } else if (korean > 80 && korean >= 90) {
-            kgrade = B;
-        } else if (korean > 70 && korean >= 80) {
-            kgrade = C;
-        } else if (korean > 80 && korean >= 70) {
-            kgrade = D;
-        } else if (korean > 59) {
-            kgrade = F;
+    const getGrade = (score) => {
+        if (score > 90) {
+            return "A";
+        } else if (score >= 80) {
+            return "B";
+        } else if (score >= 70) {
+            return "C";
+        } else if (score >= 60) {
+            return "D";
         }
-        if (math > 90 && math >= 100) {
-            mgrade = A;
-        } else if (math > 80 && math >= 90) {
-            mgrade = B;
-        } else if (math > 70 && math >= 80) {
-            mgrade = C;
-        } else if (math > 80 && math >= 70) {
-            mgrade = D;
-        } else if (math > 59) {
-            mgrade = F;
-        }
-        if (english > 90 && english >= 100) {
-            egrade = A;
-        } else if (english > 80 && english >= 90) {
-            egrade = B;
-        } else if (english > 70 && english >= 80) {
-            egrade = C;
-        } else if (english > 80 && english >= 70) {
-            egrade = D;
-        } else if (english > 59) {
-            egrade = F;
-        }
+        return "F";
     };
-    getGrade();
 </script>
 
 <div>
@@ -62,9 +35,9 @@
         </tr>
         <tr>
             <td>등급</td>
-            <td>{kgrade}</td>
-            <td>{mgrade}</td>
-            <td>{egrade}</td>
+            <td>{getGrade(korean)}</td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
     </table>
 </div>
