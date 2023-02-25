@@ -8,8 +8,7 @@
     function main() {
         for (let i = 1; i <= 100; i++) {
             if (i % 7 == 0) {
-                basu = i;
-                console.log(i);
+                basu += i+', ';
             }
         }
         return 0;
