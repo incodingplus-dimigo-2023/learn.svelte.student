@@ -14,6 +14,7 @@
 			if (!number) {
 				alert('종료');
 				clearInterval(interval);
+				return;
 			}
 			else {
 				number--;
