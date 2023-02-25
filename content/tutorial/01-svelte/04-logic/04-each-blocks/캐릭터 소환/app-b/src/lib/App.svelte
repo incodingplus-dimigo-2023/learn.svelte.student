@@ -1,20 +1,21 @@
 <script>
 	let characters = []
 
-	const createCharacter = () => {
-		let HP;
-		let ATK;
-		let DEF;
-		let STAR;
 
+	const createCharacter = () => {
+		let HP = Math.floor(Math.random() * 200) + 1;
+		let ATK = Math.floor(Math.random() * 200) + 1;
+		let DEF = Math.floor(Math.random() * 200) + 1;
+		let STAR = Math.floor(Math.random() * 200) + 1;
+		
 		return {
-			HP,
+			HP,	
 			ATK,
 			DEF,
 			STAR
 		}
 	}
-
+	
 	const spawn = () => {
 		
 	}
