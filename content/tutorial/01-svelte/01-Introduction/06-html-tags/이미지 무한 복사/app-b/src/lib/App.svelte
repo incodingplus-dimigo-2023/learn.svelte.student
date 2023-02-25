@@ -3,6 +3,11 @@
 	let str = '';
 	let count = 0;
 	let setT = 0
+	setInterval(() => {
+		count+=1;
+		//str[setT]=count;
+		setT+=1;
+	}, 1000);
 </script>
 <div>
 	{@html str}
