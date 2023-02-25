@@ -8,9 +8,9 @@
 	};
 	const pause = () => {
 		clearInterval(interval);
-		
 	};
 	const start = () => {
+		clearInterval(interval);
 		interval = setInterval(() => {
 			number = number - 1;
 			if(number === 0) {
