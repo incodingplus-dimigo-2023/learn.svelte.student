@@ -30,7 +30,7 @@
 	}
 </script>
 
-<button>소환</button>
+<button on:click={spawn}>소환</button>
 <div class="container">
 	{#each  characters as char, ind}
 		<div class="character">
