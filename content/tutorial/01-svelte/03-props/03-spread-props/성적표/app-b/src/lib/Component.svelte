@@ -11,8 +11,10 @@
         return 'B';
       }else if(score>=70){
         return 'C';
-      }if(score>=60){
+      }else if(score>=60){
         return 'D';
+      }else{
+        return 'F';
       }
     }
 </script>
@@ -35,8 +37,8 @@
         <tr>
             <td>등급</td>
             <td>{getGrade(korean)}</td>
-            <td></td>
-            <td></td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
     </table>
 </div>
