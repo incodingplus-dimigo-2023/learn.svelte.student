@@ -7,8 +7,10 @@
 
     $: {
        BMI = weight / ((height / 100)*(height / 100))
-       if(BMI >= 25.0||BMI <= 18.5){
-        state = 'red'
+       if(BMI >= 25.0){
+        state = '비만'
+       }else if(BMI <= 18.5){
+        state = '저체중'
        }else{
         state = 'black'
        }
@@ -18,9 +20,12 @@
 </script>
 
 <div class="container">
-    <div style="color : {state};">신장 : {height}</div>
-    <div style="color : {state};">체중 : {weight}</div>
-    <div style="color : {state};">BMI :{BMI} </div>
+    <div>신장 : {height}</div>
+    <div>체중 : {weight}</div>
+    <div>BMI :{BMI} </div>
+    {#if state !=='black'}
+      <div class="danger">위험도 : {state}</div>
+    {/if}
 
 </div>
 
