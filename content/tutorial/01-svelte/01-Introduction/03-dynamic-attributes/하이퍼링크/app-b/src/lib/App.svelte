@@ -4,8 +4,9 @@
     const incoding = "study.in-coding.com"
 
     const target = "_blank"
+    //Not found 오류
 </script>
 
-<a>구글</a>
-<a>네이버</a>
-<a>인코딩학원</a>
+<a href= {google}>구글</a>
+<a href= {naver}>네이버</a>
+<a href= {incoding}>인코딩학원</a>
