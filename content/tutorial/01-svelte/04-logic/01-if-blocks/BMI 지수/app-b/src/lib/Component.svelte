@@ -2,21 +2,37 @@
     export let height;
     export let weight;
 
-    let BMI;
-    let state;
+    //let BMI;
+    //let state;
 
-    $: {
-       
-    }
-
-    
+    //$: {
+    const getBMI = (height, weight) => {
+        return weight / ((height / 100) * (height / 100));
+    };
+    const getstate = (height, weight) => {
+        let BMI = weight / ((height / 100) * (height / 100));
+        if (BMI >= 25) {
+            return "비만";
+        } else if (BMI >= 23) {
+            return "과체중";
+        } else if (BMI >= 18.5) {
+            return "정상";
+        } else {
+            return "저체중";
+        }
+    };
+    //}
 </script>
 
 <div class="container">
-    <div>신장 : </div>
-    <div>체중 : </div>
-    <div>BMI : </div>
-
+    <div>신장 : {height}</div>
+    <div>체중 : {weight}</div>
+    <div>BMI : {getBMI(height, weight)}</div>
+    {#if getstate(height, weight)!== '정상'}
+        <div class="danger">위험도 : </div>
+    {/if}
+    
+    
 </div>
 
 <style>
@@ -27,6 +43,6 @@
     }
 
     .danger {
-        color: red
+        color: red;
     }
 </style>

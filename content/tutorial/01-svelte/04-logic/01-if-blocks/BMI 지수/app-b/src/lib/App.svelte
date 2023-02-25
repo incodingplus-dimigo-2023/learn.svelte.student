@@ -12,4 +12,7 @@
 		height: 192
 	}]
 </script>
+<Component weight = {arr[0].weight} height = {arr[0].height} />
+<Component weight = {arr[1].weight} height = {arr[1].height} />
+<Component weight = {arr[2].weight} height = {arr[2].height} />
 
