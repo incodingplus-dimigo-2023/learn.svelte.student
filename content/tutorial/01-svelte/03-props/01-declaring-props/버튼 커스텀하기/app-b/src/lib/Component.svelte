@@ -3,9 +3,9 @@
     export let color;
 </script>
 
-<button>
-    <img>
-    <div></div>
+<button style="border: 3px solid {color}; color: {color}">
+    <img src="../static/{name}.png">
+    <div>{name}</div>
 </button>
 
 <style>

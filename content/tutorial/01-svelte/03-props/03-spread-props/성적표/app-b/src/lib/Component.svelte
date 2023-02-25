@@ -5,7 +5,7 @@
     export let english;
 
     const getGrade = (score) => {
-      
+        return (score < 90)? (score < 80)? (score < 70)? (score < 60)? 'F': 'D': 'C': 'B': 'A';
     }
 </script>
 
@@ -20,15 +20,15 @@
         </tr>
         <tr>
             <td>점수</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{korean}</td>
+            <td>{math}</td>
+            <td>{english}</td>
         </tr>
         <tr>
             <td>등급</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{getGrade(korean)}</td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
     </table>
 </div>
