@@ -4,17 +4,17 @@
 	$: or = a && b;
 	$: and = a || b;
 
-	const changeA = () => {
-		a != a;
+	function changeA() {
+		a = !a;
 	};
-	const changeB = () => {
-		b != b;
+	function changeB() {
+		b = !b;
 	};
 </script>
 
 <div>
-	<div on:keypress={changeA}>A: {a}</div>
-	<div on:keypress={changeB}>B: {b}</div>
+	<div on:click={changeA}>A: {a}</div>
+	<div on:click={changeB}>B: {b}</div>
 </div>
 <div>
 	<div>A && B: {or}</div>
