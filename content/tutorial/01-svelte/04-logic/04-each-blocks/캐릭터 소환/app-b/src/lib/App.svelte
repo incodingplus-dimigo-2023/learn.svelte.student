@@ -5,7 +5,7 @@
 	let HP;
 	let ATK;
 	let DEF;
-	let STARMARK;
+	let STAR;
 	let starnum;
 	var stars = ["", "★", "★★", "★★★", "★★★★", "★★★★★", "★★★★★★"];
 	let container;
@@ -16,13 +16,13 @@
 		ATK = Math.floor(Math.random() * 201);
 		DEF = Math.floor(Math.random() * 201);
 		starnum = Math.floor((HP + ATK + DEF) / 100);
-		STARMARK = stars[starnum];
+		STAR = stars[starnum];
 		ch = {
 			CNT,
 			HP,
 			ATK,
 			DEF,
-			STARMARK,
+			STAR,
 		};
 
 		characters[count] = ch;
@@ -34,13 +34,13 @@
 
 <button on:click={createCharacter}>소환</button>
 <div class="container">
-	{#each characters as { STARMARK, HP, ATK, DEF }, i}
+	{#each characters as { STAR, HP, ATK, DEF }, i}
 		<div class="character">
 			<h1>{i + 1}번째 캐릭터</h1>
 			<div>체력 : {HP}</div>
 			<div>공격력 : {ATK}</div>
 			<div>방어력 : {DEF}</div>
-			<div>등급 : {STARMARK}</div>
+			<div>등급 : {STAR}</div>
 		</div>
 	{/each}
 </div>

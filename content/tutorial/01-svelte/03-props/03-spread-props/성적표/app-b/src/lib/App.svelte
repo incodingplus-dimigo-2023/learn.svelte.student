@@ -7,27 +7,27 @@
 			korean: 89,
 			math: 97,
 			english: 78,
-			kgrade:"B",
-			mgrade:"A",
-			egrade:"C",
+			// kgrade:"B",
+			// mgrade:"A",
+			// egrade:"C",
 		},
 		{
 			name: "김영희",
 			korean: 64,
 			math: 58,
 			english: 88,
-			kgrade:"D",
-			mgrade:"F",
-			egrade:"B",
+			// kgrade:"D",
+			// mgrade:"F",
+			// egrade:"B",
 		},
 		{
 			name: "홍길동",
 			korean: 92,
 			math: 84,
 			english: 100,
-			kgrade:"A",
-			mgrade:"B",
-			egrade:"A",
+			// kgrade:"A",
+			// mgrade:"B",
+			// egrade:"A",
 		},
 	];
 </script>
@@ -37,25 +37,16 @@
 	korean={arr[0].korean}
 	math={arr[0].math}
 	english={arr[0].english}
-	kgrade={arr[0].kgrade}
-	mgrade={arr[0].mgrade}
-	egrade={arr[0].egrade}
 />
 <Component
 	name={arr[1].name}
 	korean={arr[1].korean}
 	math={arr[1].math}
 	english={arr[1].english}
-	kgrade={arr[1].kgrade}
-	mgrade={arr[1].mgrade}
-	egrade={arr[1].egrade}
 />
 <Component
 	name={arr[2].name}
 	korean={arr[2].korean}
 	math={arr[2].math}
 	english={arr[2].english}
-	kgrade={arr[2].kgrade}
-	mgrade={arr[2].mgrade}
-	egrade={arr[2].egrade}
 />

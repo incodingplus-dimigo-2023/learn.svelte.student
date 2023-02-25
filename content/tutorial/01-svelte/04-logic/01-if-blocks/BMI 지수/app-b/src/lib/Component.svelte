@@ -17,7 +17,7 @@
             state = nomalfat;
             cheak= "red";
         } else if (bmi >= 18.5 && bmi <= 22.5) {
-            let nomal = "정상";
+            let nomal = "";
             state = nomal;
             cheak= "black";
         } else if (bmi <= 22.5) {
