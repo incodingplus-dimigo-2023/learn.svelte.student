@@ -8,8 +8,8 @@
 			padding: "0",
 		},
 		{
-			bcolor: "canvastex",
-			color: "#3FB984",
+			bcolor: "blue;",
+			color: "canvastext;",
 			padding: "0",
 		},
 		{

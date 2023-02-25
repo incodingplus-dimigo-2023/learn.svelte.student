@@ -1,28 +1,24 @@
 <script>
 	let a = true;
 	let b = true;
-	let and
-	let andval	
-	let or
-	let orval
+	$: or = a && b;
+	$: and = a || b;
 
-	const whatAnB = () => {
-		and = a&&b;
-	}
-	const whatAorB = () => {
-		or = a||b;
-	}
-	whatAnB()
-	whatAorB()
+	const changeA = () => {
+		a != a;
+	};
+	const changeB = () => {
+		b != b;
+	};
 </script>
 
 <div>
-	<div>A: {@html a}</div>
-	<div>B: {@html b}</div>
+	<div on:keypress={changeA}>A: {a}</div>
+	<div on:keypress={changeB}>B: {b}</div>
 </div>
 <div>
-	<div>A && B: {@html and}</div>
-	<div>A || B: {@html or}</div>
+	<div>A && B: {or}</div>
+	<div>A || B: {and}</div>
 </div>
 
 <style>
