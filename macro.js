@@ -40,3 +40,4 @@ for(let i of buf.stdout.toString('utf-8').matchAll(/Merge conflict in (.+?)\n/g)
 
 spawnSync('git', ['add', '-A']);
 spawnSync('git', ['commit', '-m', `'${new Date().toString()} 숙제 추가'`]);
+spawnSync('git', ['push']);
