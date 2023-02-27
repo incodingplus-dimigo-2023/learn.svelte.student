@@ -1,0 +1,11 @@
+#!/bin/bash
+for name in 강경호 강연우 김동규 김태현 손준혁 이루미 이형주 황해린
+do
+    git checkout $name
+    git pull
+    git merge main -m 'main과 합침'
+    git push
+done
+# git checkout 강경호
+# git merge main -m 'main과 합침'
+# git push
