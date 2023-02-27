@@ -1,0 +1,4 @@
+#!/bin/bash
+git checkout 강경호
+git merge main
+git push

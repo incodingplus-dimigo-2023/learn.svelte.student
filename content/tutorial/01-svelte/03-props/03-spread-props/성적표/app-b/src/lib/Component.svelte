@@ -1,12 +1,29 @@
 <script>
+    /** @type {string}*/
     export let name;
+
+    /** @type {number}*/
     export let korean;
+
+    /** @type {number}*/
     export let math;
+
+    /** @type {number}*/
     export let english;
 
+    /** @param {number} score*/
     const getGrade = (score) => {
-      
-    }
+        if(score >= 90){
+            return 'A';
+        } else if(score >= 80){
+            return 'B';
+        } else if(score >= 70){
+            return 'C';
+        } else if(score >= 60){
+            return 'D';
+        }
+        return 'F';
+    };
 </script>
 
 <div>
@@ -20,15 +37,15 @@
         </tr>
         <tr>
             <td>점수</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{korean}</td>
+            <td>{math}</td>
+            <td>{english}</td>
         </tr>
         <tr>
             <td>등급</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{getGrade(korean)}</td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
     </table>
 </div>

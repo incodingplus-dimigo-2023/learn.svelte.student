@@ -18,3 +18,6 @@
 		english: 100
 	}]
 </script>
+{#each arr as com}
+	<Component {...com} />
+{/each}
