@@ -17,9 +17,15 @@ const arr = [
     '강경호',
     '강연우',
     '김동규',
-]
+    '김태현',
+    '손준혁',
+    '이루미',
+    '이형주',
+    '황해린'
+];
 
 for(let name of arr){
+
     spawnSync('git', ['checkout', name])
     spawnSync('git', ['pull']);
     let buf = spawnSync('git', ['merge', 'main', '-m', `'main과 합침'`]);
@@ -41,4 +47,5 @@ for(let name of arr){
     
     spawnSync('git', ['add', '-A']);
     spawnSync('git', ['commit', '-m', `'${new Date().toString()} 숙제 추가'`]);
+    spawnSync('git', ['push']);
 }
