@@ -20,7 +20,7 @@ const arr = [
 ]
 
 for(let name of arr){
-    spawnSync('git', ['checkout', '강경호'])
+    spawnSync('git', ['checkout', name])
     spawnSync('git', ['pull']);
     let buf = spawnSync('git', ['merge', 'main', '-m', `'main과 합침'`]);
     for(let i of buf.stdout.toString('utf-8').matchAll(/Merge conflict in (.+?)\n/g)){
