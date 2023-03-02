@@ -4,71 +4,27 @@
 </script>
 
 <div class="flex-container">
-	<table>
-		<tr>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-			<td>
-				<White />
-			</td>
-			<td>
-				<Black />
-			</td>
-		</tr>
-	</table>
+	<div>
+		<Black /><White /><Black /><White />
+	</div>
+	<div>
+		<White /><Black /><White /><Black />
+	</div>
+	<div>
+		<Black /><White /><Black /><White />
+	</div>
+	<div>
+		<White /><Black /><White /><Black />
+	</div>
+	
 </div>
 
 <style>
 	.flex-container{
 		display: inline-flex;
+		border: 1px solid gray;
 	}
-	/* .flex-container > div{
+	.flex-container > div{
 		display:flex;
-	} */
+	}
 </style>

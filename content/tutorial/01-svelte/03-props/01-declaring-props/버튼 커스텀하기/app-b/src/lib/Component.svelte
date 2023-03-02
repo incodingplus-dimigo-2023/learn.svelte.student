@@ -4,7 +4,7 @@
 </script>
 
 <button style = "border-color : {color}">
-    <img src="{name}.png" >
+    <img src="{name}.png">
     <div style ="color : {color}">{name}</div>
 </button>
 
@@ -24,7 +24,7 @@
     }
     img {
         width: 100px;
-        height: 100px;
+        height: 100px;      
     }
     div {
         font-size: 80px;

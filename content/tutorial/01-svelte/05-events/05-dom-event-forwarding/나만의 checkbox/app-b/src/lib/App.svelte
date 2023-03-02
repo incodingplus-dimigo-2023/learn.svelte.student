@@ -5,4 +5,4 @@
 	let value = false
 </script>
 
-<MyCheckbox />
+<MyCheckbox {value} {label} on:click={() => value = !value} />

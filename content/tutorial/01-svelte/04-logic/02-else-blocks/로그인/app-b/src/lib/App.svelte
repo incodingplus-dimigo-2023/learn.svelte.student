@@ -9,16 +9,15 @@
 
 
 {#if isTeacherMode}
-<div on:click={toggle}>
+<div>
 
 <input type="password" placeholder="선생님 코드를 입력해주세요">	
-	선생님 모드: True
-</div>
+	<span on:click={toggle}>선생님 모드: true</span></div>
 {:else}
-	<div on:click={toggle}>
+	<div>
 		<input type="text" placeholder="아이디를 입력해주세요">
 		<input type="password" placeholder="비밀번호를 입력해주세요">	
-	선생님 모드: false
+	<span on:click={toggle}>선생님 모드: false</span>
 </div>
 {/if}
 

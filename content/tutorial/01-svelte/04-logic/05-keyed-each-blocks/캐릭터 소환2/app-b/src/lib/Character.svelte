@@ -10,7 +10,7 @@
     <div>체력 : { character.HP }</div>
     <div>공격력 : { character.ATK }</div>
     <div>방어력 : { character.DEF }</div>
-    <div>등급 : {"★".repeat(STAR)}</div>
+    <div>등급 : {"★".repeat(character.STAR + 1)}</div>
 </div>
 
 

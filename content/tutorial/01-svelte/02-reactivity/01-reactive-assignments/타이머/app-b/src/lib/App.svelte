@@ -14,11 +14,15 @@
 	};
 	const start = () => {
 		interval = setInterval(() =>{
-			number--
+			if(number === 0){
+    			alert("종료");
+				clearInterval(interval);
+				return;
+		} else {
+			number --;
+		}	
 	}, 1000)
-    if(number === 0){
-      alert("종료");
-    }	
+    
 	};
 </script>
 

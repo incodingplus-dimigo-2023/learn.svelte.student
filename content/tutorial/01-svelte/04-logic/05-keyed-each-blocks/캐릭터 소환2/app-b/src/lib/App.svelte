@@ -16,18 +16,19 @@
 	}
 
 	const spawn = () => {
-		
+		let char = createCharacter();
+		characters = [...characters,char]
 	}
 
 	const kill = (index) => {
-		
+		characters = characters.slice(1);
 	}
 
 </script>
 
 <button on:click={spawn}>소환</button>
 <div class="container">
-	
+	<Character/>
 </div>
 
 
