@@ -129,8 +129,8 @@
     </div>
     <div>약관에 동의하시겠습니까?</div>
     <div class="btn-container">
-        <ConfirmButton />
-        <CancelButton />
+        <ConfirmButton on:confirm />
+        <CancelButton on:cancel />
     </div>
 </div>
 

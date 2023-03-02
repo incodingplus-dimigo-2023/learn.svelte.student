@@ -7,11 +7,11 @@
 
 <div>
 	<input type="checkbox" disabled checked={agreement}>
-	<span>약관</span>에 동의해주십시오.
+	<span on:click={() => showModal = true}>약관</span>에 동의해주십시오.
 </div>
 
 {#if showModal}
-	<Modal />
+	<Modal on:cancel={() => {agreement = false; showModal = false}} on:confirm={() => {agreement = true; showModal = false}} />
 {/if}
 
 <style>
