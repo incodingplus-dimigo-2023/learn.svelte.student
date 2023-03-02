@@ -1,20 +1,32 @@
 <script>
-	export let targetSize
+    export let targetSize;
+    import { createEventDispatcher } from "svelte";
+    
+    const downloadSpeed = 1;
+    let currentSize = 0;
 
-    const downloadSpeed = 1
-    let currentSize = 0
+    
 
+    const dispatch = createEventDispatcher();
+
+    const finish = () => {
+        dispatch("fin", {
+            text: "안뇽~",
+        });
+    };
     let interval = setInterval(() => {
-        
-    }, 1000)
+        currentSize = currentSize + downloadSpeed;
+        if (currentSize > targetSize) {
+            return;
+        }
+    }, 1000);
 
     let percentage = 0;
-    $: percentage = Math.min(Math.round(currentSize / targetSize * 100), 100) 
-
+    $: percentage = Math.min(Math.round((currentSize / targetSize) * 100), 100);
 </script>
 
 <div class="container">
-    <div style="width: {percentage}%" class="bar"></div>
+    <div style="width: {percentage}%" class="bar" />
 </div>
 
 <style>
