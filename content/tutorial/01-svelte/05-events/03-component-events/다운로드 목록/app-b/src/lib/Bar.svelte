@@ -1,11 +1,19 @@
 <script>
 	export let targetSize
+    
+    import { createEventDispatcher } from "svelte";
 
     const downloadSpeed = 1
     let currentSize = 0
+    let dispatch = createEventDispatcher()
 
     let interval = setInterval(() => {
-        
+        currentSize = currentSize+downloadSpeed
+        if(currentSize > targetSize){
+            dispatch('download')
+            currentSize = 0
+            clearInterval(interval)
+        } 
     }, 1000)
 
     let percentage = 0;

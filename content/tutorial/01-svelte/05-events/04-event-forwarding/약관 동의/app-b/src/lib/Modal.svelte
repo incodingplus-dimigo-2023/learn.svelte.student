@@ -1,7 +1,8 @@
 <script>
 	import CancelButton from "./DenyButton.svelte";
 	import ConfirmButton from "./ConfirmButton.svelte";
-
+    import { createEventDispatcher } from "svelte";
+    let dispatch = createEventDispatcher()
 </script>
 
 <div class="container">
@@ -129,8 +130,8 @@
     </div>
     <div>약관에 동의하시겠습니까?</div>
     <div class="btn-container">
-        <ConfirmButton />
-        <CancelButton />
+        <ConfirmButton on:confirm={() => dispatch("confirmed")}/>
+        <CancelButton on:cancel={() => dispatch("canceled")}/>
     </div>
 </div>
 
