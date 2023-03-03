@@ -7,11 +7,12 @@
 
 <div>
 	<input type="checkbox" disabled checked={agreement}>
-	<span>약관</span>에 동의해주십시오.
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<span on:click={()=>{showModal = true;}}>약관</span>에 동의해주십시오.
 </div>
 
 {#if showModal}
-	<Modal />
+	<Modal on:cancel={()=>{showModal = false; agreement = false;}} on:confirm={()=>{showModal = false; agreement = true;}}/>
 {/if}
 
 <style>

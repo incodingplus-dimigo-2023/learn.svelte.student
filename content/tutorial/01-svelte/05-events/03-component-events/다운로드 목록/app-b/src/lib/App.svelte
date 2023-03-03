@@ -20,7 +20,9 @@
 	<div>
 		<div>{item.id} 번째 다운로드</div>
 		{#if item.status === "downloading"}
-			<Bar targetSize={item.size} />
+			<Bar targetSize={item.size} on:finish={()=>{
+				item.status = "finished"
+			}} />
 		{:else}
 			<div>완료</div>
 		{/if}
