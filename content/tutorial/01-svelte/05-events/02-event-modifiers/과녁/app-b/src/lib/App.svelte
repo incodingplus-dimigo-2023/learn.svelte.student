@@ -43,21 +43,3 @@
 </style>
 
 
-<style>
-	div {
-		padding: 20px;
-		width: fit-content;
-		border-radius: 9999px;
-		border: 1px solid black;
-		background-color: white;
-	}
-	.red {
-		background-color: red;
-	}
-	.green {
-		background-color: green;
-	}
-	.blue {
-		background-color: blue;
-	}
-</style>
