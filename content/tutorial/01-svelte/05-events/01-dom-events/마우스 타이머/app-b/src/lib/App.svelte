@@ -1,7 +1,6 @@
 <script>
 	let time = 0;
 	let isMouseDown = false;
-	let setT = 0;
 	let start = 0;
 	let stop = 0;
 	/**
