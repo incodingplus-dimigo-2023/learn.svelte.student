@@ -4,10 +4,11 @@
 
 	const generate = () => {
 		arr = []
-
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			for(let i =1; i < 100; i++) {
+				arr.push(i);
+			}
 		}, 100)
 	}
 

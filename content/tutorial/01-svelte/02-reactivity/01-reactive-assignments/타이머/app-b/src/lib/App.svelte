@@ -1,25 +1,22 @@
 <script>
-	const btn =document.querySelector(',btn');
-	let number = 5;	
-	let set = null;
+	let number = 5;
+	let interval = null;
 
-	const interval = () => {
-		number -= 1;
-	}
 	const reset = () => {
 		number = 5;
+		clearInterval(interval)
 	};
 	const pause = () => {
-		clearInterval(set);
+		clearInterval(interval)
 	};
 	const start = () => {
-		if(btn.classList.contains('run')) return;
-		interval()
-		set = setInterval(interval, 1000);
-		btn.classList.add('run');
-		if(number == 0) {
-			clearInterval(set);
-		}
+		const interval = setInterval(() => {
+			number -= 1;
+			if(number == 0) {
+				clearInterval(interval)
+				alert('종료')
+			}
+		}, 1000)
 	};
 </script>
 
@@ -27,7 +24,7 @@
 	<div class="number">{number}</div>
 </div>
 <div>
-	<button class="btn" on:click={start}>시작</button>
+	<button on:click={start}>시작</button>
 	<button on:click={pause}>일시 정지</button>
 	<button on:click={reset}>초기화</button>
 </div>

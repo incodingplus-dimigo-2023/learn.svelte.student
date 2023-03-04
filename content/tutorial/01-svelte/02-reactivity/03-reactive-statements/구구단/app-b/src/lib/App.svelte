@@ -2,8 +2,8 @@
 	let number = 0;
 	let multiplicationTable = "";
 
-	$: {
-		
+	$: for(let i= 0; i < 9; i++) {
+		multiplicationTable = `${number} * ${i} = ${number * i} <br>`;
 	}
 
 	const setNumber = (num) => {
