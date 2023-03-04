@@ -4,22 +4,31 @@
 
 	const reset = () => {
 		number = 5;
-		clearInterval(interval);
+		if (interval) {
+			clearInterval(interval);
+			interval = null;
+		}
 	};
 	const pause = () => {
-		clearInterval(interval);
+		if (interval) {
+			clearInterval(interval);
+			interval = null;
+		}
 	};
 	const start = () => {
-		interval = setInterval(() => {
-			if (!number) {
-				alert('종료');
-				clearInterval(interval);
-				return;
-			}
-			else {
-				number--;
-			}
-		}, 1000);
+		if (!interval && number) {
+			interval = setInterval(() => {
+				if (!number && interval) {
+					alert('종료');
+					clearInterval(interval);
+					interval = null;
+					return;
+				}
+				else {
+					number--;
+				}
+			}, 1000);
+		}
 	};
 </script>
 
