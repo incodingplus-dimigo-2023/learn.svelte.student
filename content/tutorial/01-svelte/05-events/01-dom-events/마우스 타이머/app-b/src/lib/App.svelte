@@ -2,10 +2,8 @@
 	let time = 0;
 	let isMouseDown = false;
 	let setT = 0;
-	function stop() {
-		console.log("stopped");
-		clearInterval(setT);
-	}
+	let start = 0;
+	let stop = 0;
 	/**
 	 *
 	 * @param {MouseEvent} e
@@ -15,12 +13,11 @@
 		if (e.type === "mousedown") {
 			time = 0;
 			isMouseDown = true;
-			setT = setInterval(() => {
-				time++;
-			}, 1);
+			start = Date.now();
 		} else if (e.type === "mouseup") {
 			isMouseDown = false;
-			stop();
+			stop = Date.now();
+			time = stop - start
 		}
 	};
 </script>
