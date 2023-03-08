@@ -4,7 +4,7 @@
     const dispatch = createEventDispatcher()
 </script>
 
-<div on:click={() => dispatch("cancel")}>
+<div on:mousedown={() => dispatch("cancel")}>
     아니오
 </div>
 

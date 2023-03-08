@@ -1,18 +1,29 @@
 <script>
 	import Modal from "./Modal.svelte";
 
-	let showModal = false
-	let agreement = false
+	let showModal = false;
+	let agreement = false;
+
+
+
+	
 </script>
 
 <div>
 	<input type="checkbox" disabled checked={agreement}>
-	<span>약관</span>에 동의해주십시오.
+	<span on:mousedown={() => showModal = true}>약관</span>에 동의해주십시오.
 </div>
 
 {#if showModal}
-	<Modal />
+	<Modal 
+		on:confirm={() => showModal = false} 
+		on:confirm={() => agreement = true}
+		on:cancel={() => showModal = false} 
+		on:cancel={() => agreement = false}/>
 {/if}
+
+
+
 
 <style>
     span {
