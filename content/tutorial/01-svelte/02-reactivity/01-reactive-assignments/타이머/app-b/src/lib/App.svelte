@@ -5,9 +5,11 @@
 
 	const reset = () => {
 		number = 5
-		if(click === 1){
-			clearInterval(interval);
-			click--
+		if(interval !== null){
+			if(click === 1){
+				clearInterval(interval);
+				click--
+			}
 		}
 	};
 	const pause = () => {
@@ -18,12 +20,11 @@
 		interval = setInterval(() => {
 			number--
 			if(number === 0){
-				clearInterval(interval);
 				alert('종료');
+				clearInterval(interval);
 			}
 		}, 1000);
 	};
-	
 </script>
 
 <div>
