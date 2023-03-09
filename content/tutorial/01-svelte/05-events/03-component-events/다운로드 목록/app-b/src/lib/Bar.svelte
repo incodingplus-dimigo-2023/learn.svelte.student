@@ -16,11 +16,10 @@
     let percentage = 0;
     $: percentage = Math.min(Math.round(currentSize / targetSize * 100), 100) 
 
-    if(percentage < 100) {
+    $:if(percentage < 100) {
         interval;
     } else if(percentage >= 100){
-        percentage = 0;
-        dispatch('finish')
+        dispatch('finish');
     }
 
 </script>

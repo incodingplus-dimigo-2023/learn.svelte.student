@@ -36,7 +36,7 @@
 			
 			{#each answerText as text, textIndex}
 				<td>
-
+					
 				</td>
 			{/each}
 		</tr>
