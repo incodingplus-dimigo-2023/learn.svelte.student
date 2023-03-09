@@ -1,6 +1,17 @@
 <script>
 	let time = 0
-	let isMouseDown = false
+	let isMouseDown = false;
+	let pre = 0;
+
+	const down = () =>{
+		isMouseDown = true;
+		pre = Date.now();
+	}
+	const up = () =>{
+		isMouseDown = false;
+		time = Date.now();
+	}
+
 </script>
 
 <div>
