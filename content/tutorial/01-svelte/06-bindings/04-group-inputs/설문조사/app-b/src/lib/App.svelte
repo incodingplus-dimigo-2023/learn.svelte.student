@@ -18,7 +18,6 @@
 		question: "나는 '바인딩'을 이해했다.",
 		answer: 0
 	}]
-
 	const answerText = [
 		"전혀 그렇지 않다",
 		"그렇지 않다",
@@ -28,15 +27,26 @@
 
 	let score = 0
 
+
 </script>
 
 <table>
 	{#each questionSets as questionSet, questionIndex}
 		<tr>
+			<td>{questionSets[questionIndex].question}</td>
 			
 			{#each answerText as text, textIndex}
 				<td>
-					
+					<input type="radio" value="{textIndex}" name="answer{questionIndex}" 
+					on:input={() => {
+						let pre = questionSets[questionIndex].answer
+						questionSets[questionIndex].answer = textIndex;
+
+						let next = questionSets[questionIndex].answer - pre
+
+						score = score + next;
+					}}>
+					{answerText[textIndex]}
 				</td>
 			{/each}
 		</tr>
