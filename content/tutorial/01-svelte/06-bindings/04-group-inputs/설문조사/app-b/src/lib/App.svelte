@@ -26,17 +26,20 @@
 		"매우 그렇다"	
 	]
 
-	let score = 0
+	$: score = questionSets.reduce((acc, cur) => {
+		return {question: "", answer: cur.answer + acc.answer};
+	}).answer;
 
 </script>
 
 <table>
 	{#each questionSets as questionSet, questionIndex}
 		<tr>
-			
+			<td>{questionSet.question}</td>
 			{#each answerText as text, textIndex}
 				<td>
-
+					<input type="radio" bind:group={questionSet.answer} name="answer{questionIndex}" value="{textIndex}">
+					<span>{text}</span>
 				</td>
 			{/each}
 		</tr>

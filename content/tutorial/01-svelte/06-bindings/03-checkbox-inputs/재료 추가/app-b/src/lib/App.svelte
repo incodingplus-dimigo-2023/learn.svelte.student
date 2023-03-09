@@ -23,12 +23,19 @@
 		name: "야채",
 		price: 400,
 		checked: false
-	}]
+	}];
 
-	let totalPrice = 0
+	$: totalPrice = orders.filter((v) => v.checked).reduce((acc, cur) => {
+		return {name: "", price: acc.price + cur.price, checked: false};
+	}, {name: '', price: 0, checked: false}).price;
 </script>
 
 <div class="order">
-
+	{#each orders as {name, price, checked}}
+		<div>
+			<input type="checkbox" bind:checked={checked}>
+			<span>{name} ₩{price}</span>
+		</div>
+	{/each}
 	<div>총 : {totalPrice}원</div>
 </div>
