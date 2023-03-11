@@ -1,42 +1,58 @@
 <script>
-	let questionSets = [{
-		question: "나는 'Svelte 소개'를 이해했다.",
-		answer: 0
-	}, {
-		question: "나는 '반응성'을 이해했다.",
-		answer: 0
-	}, {
-		question: "나는 '속성'을 이해했다.",
-		answer: 0
-	}, {
-		question: "나는 '논리 블럭'을 이해했다.",
-		answer: 0
-	}, {
-		question: "나는 '이벤트'를 이해했다.",
-		answer: 0
-	}, {
-		question: "나는 '바인딩'을 이해했다.",
-		answer: 0
-	}]
+	let questionSets = [
+		{
+			question: "나는 'Svelte 소개'를 이해했다.",
+			answer: 0,
+		},
+		{
+			question: "나는 '반응성'을 이해했다.",
+			answer: 0,
+		},
+		{
+			question: "나는 '속성'을 이해했다.",
+			answer: 0,
+		},
+		{
+			question: "나는 '논리 블럭'을 이해했다.",
+			answer: 0,
+		},
+		{
+			question: "나는 '이벤트'를 이해했다.",
+			answer: 0,
+		},
+		{
+			question: "나는 '바인딩'을 이해했다.",
+			answer: 0,
+		},
+	];
 
 	const answerText = [
 		"전혀 그렇지 않다",
 		"그렇지 않다",
 		"그렇다",
-		"매우 그렇다"	
-	]
+		"매우 그렇다",
+	];
 
-	let score = 0
-
+	$: score = questionSets.reduce((a, v) => a + v.answer, 0);
 </script>
 
 <table>
-	{#each questionSets as questionSet, questionIndex}
+	{#each questionSets as { question, answer }, questionIndex}
 		<tr>
-			
+			<td>
+				{question}
+			</td>
 			{#each answerText as text, textIndex}
 				<td>
-
+					<label for="answer-{questionIndex}-{textIndex}">
+						<input
+							type="radio"
+							id="answer-{questionIndex}-{textIndex}"
+							value={textIndex}
+							bind:group={answer}
+						/>
+						{text}
+					</label>
 				</td>
 			{/each}
 		</tr>
