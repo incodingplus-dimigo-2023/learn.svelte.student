@@ -1,6 +1,7 @@
 <script>
+	import { each } from "svelte/internal";
+
 	const MAX_SCORE = 100;
-	num = 0;
 
 	let subjects = [
 		{
@@ -16,39 +17,22 @@
 			score: 0,
 		},
 	];
-
-	let averageScore = 0;
-	for (let i = 0; i < subjects.length; i++) {
-		const arr = subjects[i];
-		num += arr;
-	}
-	averageScore = num / 3;
+	$: averageScore =
+		subjects.reduce((a, v) => a + v.score, 0) / subjects.length;
 </script>
 
 <div>
-	<span>{subjects[0].name}</span><input
-		type="number"
-		bind:value={subjects[0].score}
-		min="0"
-		max="100"
-	/><span>점</span>
-</div>
-<div>
-	<span>{subjects[1].name}</span><input
-		type="number"
-		bind:value={subjects[1].score}
-		min="0"
-		max="100"
-	/><span>점</span>
-</div>
-<div>
-	<span>{subjects[2].name}</span><input
-		type="number"
-		bind:value={subjects[2].score}
-		min="0"
-		max="100"
-	/><span>점</span>
-</div>
-<div>
+	{#each subjects as { name, score }}
+		<div>
+			{name} :
+			<input
+				type="number"
+				min={0}
+				max={MAX_SCORE}
+				step={1}
+				bind:value={score}
+			/>
+		</div>
+	{/each}
 	<div>평균 {averageScore}점</div>
 </div>
