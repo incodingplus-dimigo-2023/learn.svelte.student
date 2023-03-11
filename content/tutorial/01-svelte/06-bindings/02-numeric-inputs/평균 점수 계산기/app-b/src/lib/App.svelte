@@ -12,9 +12,9 @@
 		score: 0
 	}]
 
-	let averageScore = 0;
+	//let averageScore = 0;
 
-	$: averageScore = (subjects[0].score + subjects[1].score + subjects[2].score) / 3
+	$:averageScore = subjects.reduce((a,v) => a + v.score, 0) / subjects.length;
 
 	
 
