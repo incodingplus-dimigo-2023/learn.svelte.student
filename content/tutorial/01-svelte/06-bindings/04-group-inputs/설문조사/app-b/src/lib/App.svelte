@@ -25,28 +25,21 @@
 		"매우 그렇다"	
 	]
 
-	let score = 0
+	$:score = questionSets.reduce((a, v) => a + v.answer, 0);
 
 
 </script>
 
 <table>
-	{#each questionSets as questionSet, questionIndex}
+	{#each questionSets as {question, answer}, questionIndex}
 		<tr>
-			<td>{questionSets[questionIndex].question}</td>
-			
+			<td>{question}</td>
 			{#each answerText as text, textIndex}
 				<td>
-					<input type="radio" value="{textIndex}" name="answer{questionIndex}" 
-					on:input={() => {
-						let pre = questionSets[questionIndex].answer
-						questionSets[questionIndex].answer = textIndex;
-
-						let next = questionSets[questionIndex].answer - pre
-
-						score = score + next;
-					}}>
-					{answerText[textIndex]}
+					<label for="answer-{questionIndex}-{textIndex}">
+						<input type="radio" id="answer-{questionIndex}-{textIndex}" value={textIndex} bind:group={answer}>
+						{text}
+					</label>
 				</td>
 			{/each}
 		</tr>
