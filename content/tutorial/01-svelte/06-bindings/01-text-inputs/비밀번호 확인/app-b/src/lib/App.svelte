@@ -2,14 +2,9 @@
 	let password1;
 	let password2;
 
-	let isMatched = false
+	$: isMatched = password1 && password2 && password1 === password2;
 
-	$: if(password1 === password2 && password1 !== undefined && password2 !== undefined) {
-		isMatched = true
-		console.log(password1)
-	} else {
-		isMatched = false
-	}
+
 </script>
 
 
