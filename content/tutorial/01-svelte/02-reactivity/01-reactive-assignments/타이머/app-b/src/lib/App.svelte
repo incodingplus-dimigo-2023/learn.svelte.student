@@ -1,8 +1,7 @@
 <script>
 	let number = 5;
+	let interval = null;
 	let click = 0;
-	let interval = null
-
 	const reset = () => {
 		number = 5
 		if(interval !== null){
@@ -13,7 +12,7 @@
 		}
 	};
 	const pause = () => {
-		clearInterval(interval);
+		clearInterval(interval)
 	};
 	const start = () => {
 		click++

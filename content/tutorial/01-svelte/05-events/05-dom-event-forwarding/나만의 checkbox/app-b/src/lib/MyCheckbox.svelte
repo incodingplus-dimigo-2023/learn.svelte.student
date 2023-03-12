@@ -4,7 +4,7 @@
     
 </script>
 
-<div >
-    <input type="checkbox" value="{value}">
-    <span on:click>{label}</span>
+<div on:click>
+    <input type="checkbox" {value}>
+    <span>{label}</span>
 </div>

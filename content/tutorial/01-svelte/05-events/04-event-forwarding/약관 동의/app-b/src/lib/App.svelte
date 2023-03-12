@@ -15,13 +15,14 @@
 		showModal = false
 	}
 </script>
+
 <div>
 	<input type="checkbox" disabled checked={agreement}>
 	<span on:click={modal}>약관</span>에 동의해주십시오.
 </div>
 
 {#if showModal}
-	<Modal on:confirmed={confirm} on:canceled={cancel}/>
+	<Modal  on:confirmed={confirm} on:canceled={cancel}/>
 {/if}
 
 <style>

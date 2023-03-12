@@ -3,7 +3,7 @@
     export let value;
 </script>
 
-<div>
+<div on:click>
     <input type="checkbox">
-    <span></span>
+    <span >{label}</span>
 </div>

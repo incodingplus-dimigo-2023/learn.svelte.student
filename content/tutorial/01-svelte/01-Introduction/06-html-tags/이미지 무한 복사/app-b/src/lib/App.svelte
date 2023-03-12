@@ -1,22 +1,8 @@
 <script>
 	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
-	let str = `${html}`;
+	let str = '';
 	let count = 0;
 	let setT = 0
-	
-	setInterval(() => {
-		str = `${html}`
-		count++;
-		for(let i = 0; i <= count; i++){
-			str = str + `${html}`;
-			if(i === count)break
-		};
-		if(count === 98){
-			count = 97;
-		}
-	}, 100)
-	
-	
 </script>
 <div>
 	{@html str}

@@ -1,19 +1,12 @@
 <script>
 	let isTeacherMode = false
-	const change = () => {
-		if(isTeacherMode === false)isTeacherMode = true;
-		else if(isTeacherMode === true)isTeacherMode = false;
-	}
 </script>
-{#if isTeacherMode===false}
-	<input type="text" placeholder="아이디를 입력해주세요">
-	<input type="password" placeholder="비밀번호를 입력해주세요">	
-	{:else}	<input type="password" placeholder="선생님 코드를 입력해주세요">
-{/if}
 
-
-<div on:click={change}>
-	선생님 모드: {isTeacherMode}
+<input type="password" placeholder="선생님 코드를 입력해주세요">	
+<input type="text" placeholder="아이디를 입력해주세요">
+<input type="password" placeholder="비밀번호를 입력해주세요">	
+<div>
+	선생님 모드: 
 </div>
 
 <style>
