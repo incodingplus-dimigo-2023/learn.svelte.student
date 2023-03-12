@@ -12,10 +12,17 @@
 		score: 0
 	}]
 
-	let averageScore = 0
+	let averageScore =0;
+
+	$ : averageScore = subjects.reduce((a,v) => a+v.score, 0) / subjects.length;
 </script>
 
 <div>
+	{#each  subjects as {name, score}}
+		<div>
+			{name} : <input type="number" min={0} max={100} step={1} bind:value={score}>
+		</div>
+	{/each}
 	<div>평균 {averageScore}점</div>
 </div>
 
