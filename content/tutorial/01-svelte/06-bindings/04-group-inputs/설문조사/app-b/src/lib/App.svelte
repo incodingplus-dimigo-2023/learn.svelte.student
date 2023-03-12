@@ -32,26 +32,20 @@
 		"그렇다",
 		"매우 그렇다",
 	];
-  let score =0;
-	$ : score = questionSets.reduce((a,v) => a+v.answer, 0);
+	let score = 0;
+	$: score = questionSets.reduce((a, v) => a + v.answer, 0);
 </script>
 
 <table>
-	{#each questionSets as { question, answer }, questionIndex}
+	{#each questionSets as { question, answer }}
 		<tr>
 			<td>
 				{question}
 			</td>
 			{#each answerText as text, textIndex}
 				<td>
-					<label for="answer-{questionIndex}-{textIndex}">
-						<input
-							id="answer-{questionIndex}-{textIndex}"
-							type="radio"
-							value={textIndex}
-							bind:group={answer}/>
-						{text}
-					</label>
+					<input type="radio" value={textIndex} bind:group={answer} />
+					{text}
 				</td>
 			{/each}
 		</tr>
