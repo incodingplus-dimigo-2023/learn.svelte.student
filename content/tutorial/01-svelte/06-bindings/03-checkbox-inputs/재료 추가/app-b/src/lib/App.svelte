@@ -29,9 +29,9 @@
 </script>
 
 <div class="order">
-	{#each orders as {name, price, checked}, ind}
+	{#each orders as {name, price, checked}}
 		<div>
-			<label for="oder-{ind}"><input id="order-{ind}" type="checkbox" bind:checked> : {name} ${price}</label>
+			<input type="checkbox" bind:checked> : {name} ${price}
 		</div>
 	{/each}
 	<div>총 : {totalPrice}원</div>
