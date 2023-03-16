@@ -21,9 +21,12 @@
 
 	let selected = []
 
-	let totalPrice = 0
+	$: totalPrice = selected.reduce((pre, cur) => {return pre + cur.price}, 0);
 </script>
 
-<select>
+<select bind:value={selected} on:change={() => console.log(selected)} multiple>
+	{#each menus as v}
+		<option value="{v}">{v.name}</option>
+	{/each}
 </select>
 <div>총 : {totalPrice}원</div>
