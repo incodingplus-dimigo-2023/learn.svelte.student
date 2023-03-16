@@ -26,17 +26,27 @@
 		"매우 그렇다"	
 	]
 
-	let score = 0
+ $: score = questionSets.reduce((a,v) => a + v.answer, 0)
 
 </script>
 
 <table>
-	{#each questionSets as questionSet, questionIndex}
+	{#each questionSets as {question, answer}, questionIndex}
 		<tr>
-			
+      <td>
+        {question}
+      </td>
 			{#each answerText as text, textIndex}
 				<td>
-
+          <label for = "answer-{questionIndex}-{textIndex}">
+          <input 
+          id ="answer-{questionIndex}-{textIndex}"
+           type ="radio"
+           value={textIndex}
+           bind:group = {answer}
+           /> 
+          {text}
+          </label>
 				</td>
 			{/each}
 		</tr>
@@ -45,7 +55,7 @@
 
 <h1>당신의 Svelte 이해도는 {score}점입니다.</h1>
 
-<style>
+<style>	
 	td {
 		padding: 5px;
 		border: 1px solid black;

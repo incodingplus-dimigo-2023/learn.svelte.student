@@ -57,7 +57,26 @@
 <div>
   {#each subjects as {name, score}}
     <div>
-    {name} : <input type = "number" min={0} max ={100} step={1} bind:value={score}>
+    {name} : <input 
+	type = "number" 
+	min={0}
+	max ={100}
+	step={1} 
+	bind:value={score}
+	on:input={e => {
+		const t = e.currentTarget;
+		if(!t.validity.valid){
+			if(t.validity.rangeOverflow){
+				score = 100
+			} else if(t.validity.rangeOverflow){
+				score = 0;
+			} else {
+				score = Math.floor(score)
+				if(isNaN(score)) score = 0;
+			}
+		}
+	}}
+	>
     </div>
   {/each}
 	<div>평균 {averageScore}점</div>
