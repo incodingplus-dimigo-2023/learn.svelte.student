@@ -1,4 +1,6 @@
 <script>
+
+
 	const menus = [{
 		name: "패티",
 		price: 2000,
@@ -20,10 +22,17 @@
 	}]
 
 	let selected = []
+	$: console.log(selected);
+	
 
-	let totalPrice = 0
+	
+	$: totalPrice = menus.filter(v => selected.includes(v.name)).reduce((a,v) => a + v.price, 0);
+
 </script>
 
-<select>
+<select bind:value={selected} multiple>
+	{#each menus as {name, price}}
+		<option value={name}>{name}</option>
+	{/each}
 </select>
 <div>총 : {totalPrice}원</div>

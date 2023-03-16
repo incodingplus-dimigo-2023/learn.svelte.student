@@ -27,7 +27,7 @@
 	$: totalPrice = orders.filter(v => v.checked).reduce((a,v) => a + v.price , 0)
 	
 	
-
+	
 </script>
 
 <div class="order">
