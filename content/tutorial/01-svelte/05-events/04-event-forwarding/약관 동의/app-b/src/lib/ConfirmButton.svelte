@@ -1,12 +1,14 @@
 <script>
-	import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher } from "svelte";
 
-    const dispatch = createEventDispatcher()
+    const dispatch = createEventDispatcher();
+
+    const clickyes = () => {
+        dispatch("yes");
+    };
 </script>
 
-<div on:click={() => dispatch("confirm")}>
-    예
-</div>
+<div on:click={clickyes}>예</div>
 
 <style>
     div {

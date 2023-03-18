@@ -1,13 +1,17 @@
 <script>
 	import Modal from "./Modal.svelte";
 
-	let showModal = false
-	let agreement = false
+	let showModal = false;
+	let agreement = false;
+
+	function on() {
+		showModal = true;
+	}
 </script>
 
 <div>
-	<input type="checkbox" disabled checked={agreement}>
-	<span>약관</span>에 동의해주십시오.
+	<input type="checkbox" disabled checked={agreement} />
+	<span on:click={on}>약관</span>에 동의해주십시오.
 </div>
 
 {#if showModal}
@@ -15,7 +19,7 @@
 {/if}
 
 <style>
-    span {
+	span {
 		text-decoration: underline;
 		cursor: pointer;
 		color: blue;

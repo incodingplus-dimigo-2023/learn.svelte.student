@@ -1,13 +1,13 @@
 <script>
-	let value = ""
-	let filtered = ""
+	let value = "";
+	let filtered = "";
 
-	const words = ["스벨트", "svelte"]
+	const words = ["스벨트", "svelte"];
 
 	$: {
-		
+		value
 	}
 </script>
 
-<textarea></textarea>
+<textarea bind:value={value} />
 <div>{filtered}</div>

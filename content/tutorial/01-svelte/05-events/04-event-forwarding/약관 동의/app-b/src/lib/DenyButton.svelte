@@ -1,12 +1,14 @@
 <script>
-	import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher } from "svelte";
 
-    const dispatch = createEventDispatcher()
+    const dispatch = createEventDispatcher();
+
+    const clickno = () => {
+        dispatch("yes");
+    };
 </script>
 
-<div on:click={() => dispatch("cancel")}>
-    아니오
-</div>
+<div on:click={clickno}>아니오</div>
 
 <style>
     div {
