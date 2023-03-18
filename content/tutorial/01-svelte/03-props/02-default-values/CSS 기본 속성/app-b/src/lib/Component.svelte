@@ -1,30 +1,18 @@
 <script>
-    const arr = [{
-        backgroundcolor: 'transparent',
-        color: 'canvastext',
-        padding: '0'
-    }, {
-        backgroundcolor: 'blue',
-        color: 'canvastext',
-        padding: '0'
-    }, {
-        backgroundcolor: 'blue',
-        color: 'red',
-        padding: '0'
-    }]
+    export let backgroundcolor;
+    export let color;
+    export let padding;
 </script>
 
 <div class="container">
-    {#each arr as {backgroundcolor, color, padding}}
     <div>
-        <div>{backgroundcolor}</div>
-        <div>{color}</div>
-        <div>{padding}</div>
+        <div>background-color: {backgroundcolor}</div>
+        <div>color: {color}</div>
+        <div>padding: {padding}</div>
     </div>
-    <div class="view" style="backgroundcolor: {backgroundcolor};
-    color: {color};
-    padding:{padding};">텍스트</div>
-    {/each}
+    <div class="view" style="background-color: {backgroundcolor}; 
+        color:{color}; 
+        padding:{padding}">텍스트</div>
 </div>
 
 <style>
