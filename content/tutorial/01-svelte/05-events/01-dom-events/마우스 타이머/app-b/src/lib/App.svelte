@@ -1,5 +1,5 @@
 <script>
-	let time = Date.now();
+	let time = 0
 	let isMouseDown = false
 </script>
 

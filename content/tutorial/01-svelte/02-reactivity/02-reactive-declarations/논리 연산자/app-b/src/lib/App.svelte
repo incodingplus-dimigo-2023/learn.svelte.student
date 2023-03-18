@@ -5,12 +5,12 @@
 </script>
 
 <div>
-	<div>A: {a}</div>
-	<div>B: {b}</div>
+	<div>A: </div>
+	<div>B: </div>
 </div>
 <div>
-	<div>A && B: {a && b} </div>
-	<div>A || B: {a || b}</div>
+	<div>A && B: </div>
+	<div>A || B: </div>
 </div>
 
 <style>

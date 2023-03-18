@@ -7,7 +7,9 @@
 
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			for(let i =0; i < 100; i++) {
+				arr.push(i);
+			}
 		}, 100)
 	}
 
