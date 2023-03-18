@@ -14,7 +14,9 @@
 
 <select bind:value={selectedGrade}>
   {#each grade as arr, i}
-    <option>{arr}</option>
+    {#if i < 4}
+      <option>{arr}</option>
+    {/if}
   {/each}
 </select>
 
