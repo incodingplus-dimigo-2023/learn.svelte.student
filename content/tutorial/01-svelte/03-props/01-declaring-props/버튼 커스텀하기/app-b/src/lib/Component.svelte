@@ -4,6 +4,7 @@
 </script>
 
 <button style="color: {color}; border: 1px solid {color};">
+    <!-- svelte-ignore a11y-missing-attribute -->
     <img src="{name}.png">
     <div>{name}</div>
 </button>
