@@ -14,8 +14,5 @@
 </script>
 
 {#each arr as {name, color}}
-	<button style="color: {color};">
-		<img src="{name}.png">
-		<div>{name}</div>
-	</button>
+	<Component name="{name}" color="{color}"/>
 {/each}
