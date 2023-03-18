@@ -1,14 +1,30 @@
 <script>
-
+    const arr = [{
+        backgroundcolor: 'transparent',
+        color: 'canvastext',
+        padding: '0'
+    }, {
+        backgroundcolor: 'blue',
+        color: 'canvastext',
+        padding: '0'
+    }, {
+        backgroundcolor: 'blue',
+        color: 'red',
+        padding: '0'
+    }]
 </script>
 
 <div class="container">
+    {#each arr as {backgroundcolor, color, padding}}
     <div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>{backgroundcolor}</div>
+        <div>{color}</div>
+        <div>{padding}</div>
     </div>
-    <div class="view">텍스트</div>
+    <div class="view" style="backgroundcolor: {backgroundcolor};
+    color: {color};
+    padding:{padding};">텍스트</div>
+    {/each}
 </div>
 
 <style>

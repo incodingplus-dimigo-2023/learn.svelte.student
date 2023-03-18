@@ -10,5 +10,12 @@
 	}, {
 		name: "svelte",
 		color: "#FF3E00"
-	}]	
+	}]
 </script>
+
+{#each arr as {name, color}}
+	<button style="color: {color};">
+		<img src="{name}.png">
+		<div>{name}</div>
+	</button>
+{/each}
