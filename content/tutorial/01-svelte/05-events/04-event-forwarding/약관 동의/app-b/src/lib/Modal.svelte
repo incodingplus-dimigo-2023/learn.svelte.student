@@ -141,10 +141,12 @@
     </div>
     <div>약관에 동의하시겠습니까?</div>
     <div class="btn-container">
-        <ConfirmButton on:yes={() => (showModal = false)} />
-        <CancelButton on:no={() => (showModal = false)} />
+        <ConfirmButton on:yes/>
+        <CancelButton on:no />
     </div>
 </div>
+<!-- () => (showModal = false)
+() => (showModal = false) -->
 
 <style>
     .container {

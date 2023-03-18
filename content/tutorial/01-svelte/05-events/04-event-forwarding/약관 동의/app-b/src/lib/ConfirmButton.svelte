@@ -4,8 +4,10 @@
     const dispatch = createEventDispatcher();
 
     const clickyes = () => {
-        dispatch("yes");
-    };
+		dispatch('yes', {
+			number: Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
+		});
+	}
 </script>
 
 <div on:click={clickyes}>예</div>

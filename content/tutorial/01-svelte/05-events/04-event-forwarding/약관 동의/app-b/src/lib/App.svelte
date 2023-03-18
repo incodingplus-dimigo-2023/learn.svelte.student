@@ -7,6 +7,12 @@
 	function on() {
 		showModal = true;
 	}
+	function chy() {
+		agreement = true;
+	}
+	function chn() {
+		agreement = false;
+	}
 </script>
 
 <div>
@@ -15,7 +21,7 @@
 </div>
 
 {#if showModal}
-	<Modal />
+	<Modal on:yes={chy} on:no={chn} />
 {/if}
 
 <style>

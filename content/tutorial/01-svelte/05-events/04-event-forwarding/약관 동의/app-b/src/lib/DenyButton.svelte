@@ -4,8 +4,10 @@
     const dispatch = createEventDispatcher();
 
     const clickno = () => {
-        dispatch("yes");
-    };
+		dispatch('no', {
+			number: Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
+		});
+	}
 </script>
 
 <div on:click={clickno}>아니오</div>
