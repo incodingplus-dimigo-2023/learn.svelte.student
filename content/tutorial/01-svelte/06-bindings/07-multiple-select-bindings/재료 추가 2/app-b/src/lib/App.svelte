@@ -31,16 +31,14 @@
   let totalPrice = 0;
   $: {
     totalPrice = selected.reduce((acc, cur, i) => {
-      acc = Number(cur) + Number(acc);
-    });
+      return Number(acc) + cur.price;
+    }, 0);
   }
 </script>
 
-<select bind:value={selected}>
+<select bind:value={selected} multiple>
   {#each menus as arr, i}
-    <option value={arr.price}>수제 {arr.name}</option>
+    <option value={arr}>{arr.name}</option>
   {/each}
 </select>
 <div>총 : {totalPrice}원임</div>
-
-<div>{selected}</div>
