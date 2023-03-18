@@ -31,7 +31,7 @@
 </script>
 
 <select bind:value={selected} multiple>
-	{#each menus as {name, price}}
+	{#each menus as {name}}
 		<option value={name}>{name}</option>
 	{/each}
 </select>
