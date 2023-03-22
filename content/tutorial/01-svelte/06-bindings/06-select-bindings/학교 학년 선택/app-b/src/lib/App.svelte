@@ -1,6 +1,7 @@
 <script>
 	const schools = ["초등학교", "중학교", "고등학교"]
-
+	const Elementary = [1, 2, 3, 4, 5, 6]
+	const up = [1, 2, 3]
 	let selectedSchool
 	let selectedGrade
 </script>
@@ -12,9 +13,17 @@
 </select>
 
 <select bind:value={selectedGrade}>
-	{#each schools as i, ind}
-		<option>{ind+1}학년</option>
-	{/each}
+	{#if selectedSchool === schools[0]}
+		{#each Elementary as i}
+			<option>{i}학년</option>
+		{/each}
+	{:else}
+		{#each up as i}
+			<option>{i}학년</option>
+		{/each}
+	{/if}
+	
+	
 </select>
 
 

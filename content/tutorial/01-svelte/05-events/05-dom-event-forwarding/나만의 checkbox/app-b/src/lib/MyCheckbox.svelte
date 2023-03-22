@@ -5,6 +5,6 @@
 </script>
 
 <div on:click>
-    <input type="checkbox" {value}>
+    <input type="checkbox" checked={value}>
     <span>{label}</span>
 </div>
