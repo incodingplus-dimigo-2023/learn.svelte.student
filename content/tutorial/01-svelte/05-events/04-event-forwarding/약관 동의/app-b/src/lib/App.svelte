@@ -9,11 +9,11 @@
 	}
 	function chy() {
 		agreement = true;
-		showModal = false;
+		showModal = false	;
 	}
 	function chn() {
 		agreement = false;
-		showModal = false;
+		showModal = false	;
 	}
 </script>
 
