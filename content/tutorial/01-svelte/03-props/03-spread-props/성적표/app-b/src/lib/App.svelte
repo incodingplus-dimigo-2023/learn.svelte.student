@@ -18,3 +18,6 @@
 		english: 100
 	}]
 </script>
+{#each arr as {name, korean, math, english}}
+	<Component name="{name}" korean="{korean}" math="{math}" english="{english}"/>
+{/each}

@@ -1,15 +1,33 @@
 <script>
+    import { get } from "svelte/store";
+
+
     export let name;
+    /** @type {number}*/
     export let korean;
+    /** @type {number} */
     export let math;
+    /** @type {number}*/
     export let english;
 
-    const getGrade = (score) => {
-      
+    let point = '';
+
+    const getGrade = (number) => {
+        if(number >= 90) { 
+            return 'A'
+        } else if (number >= 80) {
+            return 'B'
+        } else if (number >= 70) {
+            return 'C'
+        } else if (number >= 60) {
+            return 'D'
+        } else {
+            return 'F'
+        }
     }
 </script>
 
-<div>
+<div> 
     <h1>{name}님의 성적표</h1>
     <table>
         <tr>
@@ -20,17 +38,17 @@
         </tr>
         <tr>
             <td>점수</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{korean}</td>
+            <td>{math}</td>
+            <td>{english}</td>
         </tr>
         <tr>
             <td>등급</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{getGrade(korean)}</td>
+            <td>{getGrade(math)}</td>
+            <td>{getGrade(english)}</td>
         </tr>
-    </table>
+     </table>
 </div>
 
 <style>
@@ -41,5 +59,4 @@
     td {
         border: 1px solid black;
     }
-
 </style>
