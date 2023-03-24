@@ -1,12 +1,21 @@
 <script>
 	let isTeacherMode = false
-</script>
 
-<input type="password" placeholder="선생님 코드를 입력해주세요">	
-<input type="text" placeholder="아이디를 입력해주세요">
-<input type="password" placeholder="비밀번호를 입력해주세요">	
-<div>
-	선생님 모드: 
+	function toggle() {
+		isTeacherMode = !isTeacherMode
+	}
+</script>
+{#if isTeacherMode}
+	<input type="password" placeholder="선생님 코드를 입력해주세요">
+{:else}
+	<input type="text" placeholder="아이디를 입력해주세요">
+	<input type="password" placeholder="비밀번호를 입력해주세요">
+{/if}
+
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div on:click={toggle}>
+	선생님 모드: {isTeacherMode}
 </div>
 
 <style>
