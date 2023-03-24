@@ -2,32 +2,44 @@
 	let characters = []
 
 	const createCharacter = () => {
-		let HP;
-		let ATK;
-		let DEF;
+		let HP = Math.floor(Math.random() * 200);
+		let ATK= Math.floor(Math.random() * 200);
+		let DEF= Math.floor(Math.random() * 200);
 		let STAR;
-
+		if((HP+ATK+DEF) > 400) {
+			STAR= '★★★★★'
+		} else if((HP +ATK+DEF) > 300) {
+			STAR = '★★★★'
+		} else if((HP + ATK + DEF) > 200) {
+			STAR = '★★★'
+		} else if((HP + ATK + DEF) > 100) {
+			STAR = '★★'
+		} else {
+			STAR = '★'
+		}
 		return {
 			HP,
 			ATK,
 			DEF,
 			STAR
-		}
+		}	
 	}
 
 	const spawn = () => {
-		
+		characters = [...characters, createCharacter()]
 	}
 </script>
 
-<button>소환</button>
+<button on:click={spawn}>소환</button>
 <div class="container">
+	{#each characters as {HP, ATK, DEF, STAR}, i}
 	<div class="character">
-		<h1></h1>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<h1>{i + 1}번째 캐릭터</h1>
+		<div>체력 : {HP}</div>
+		<div>공격력 : {ATK}</div>
+		<div>방어력 : {DEF}</div>
+		<div>등급 : {STAR}</div>
 	</div>
+	{/each}
 </div>
 
