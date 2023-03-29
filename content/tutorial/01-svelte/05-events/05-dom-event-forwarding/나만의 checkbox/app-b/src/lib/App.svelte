@@ -5,7 +5,8 @@
 	let value = false;
 	const handleClick = () => {
 		value = !value;
+		console.log(value);
 	};
 </script>
 
-<MyCheckbox on:click={handleClick} {label} {value} />
+<MyCheckbox on:click={handleClick} {value} {label} />
