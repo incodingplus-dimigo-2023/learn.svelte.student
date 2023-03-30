@@ -1,12 +1,14 @@
 <script>
 	const schools = ["초등학교", "중학교", "고등학교"]
-
-	let selectedSchool
-	let selectedGrade
+	const grade6 = ['1','2','3','4','5','6']
+	const grade3 = ['1','2','3']
+	let selectedSchool ="초등학교";
+	let selectedGrade = '1';
 	let selected
 	let select
 	const school = () =>{
 		selectedSchool=selected
+		selectedGrade = '1';
 }
 	const grade = () =>{
 		selectedGrade=select
@@ -19,10 +21,17 @@
 	<option>고등학교</option>
 </select>
 
+
 <select bind:value={select} on:click={grade}>
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
+	{#if selectedSchool === '초등학교'}
+		{#each grade6 as number}
+			<option>{number}</option>
+		{/each}
+	{:else}
+	{#each grade3 as number}
+	<option>{number}</option>
+{/each}
+	{/if}
 </select>
 
 
