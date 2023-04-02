@@ -1,9 +1,19 @@
-import { WebContainer} from '@webcontainer/api';
+import { WebContainer } from '@webcontainer/api';
 import base64 from 'base64-js';
 import { get_depth } from '../../../utils.js';
 import { ready } from '../common/index.js';
+
 /** @type {import('@webcontainer/api').WebContainer} Web container singleton */
 let vm;
+
+/** @param {string} label */
+function console_stream(label) {
+	return new WritableStream({
+		write(chunk) {
+			// console.log(`[${label}] ${chunk}`);
+		}
+	});
+}
 
 /**
  * @param {import('$lib/types').Stub[]} stubs
@@ -29,14 +39,9 @@ export async function create(stubs, callback) {
 
 	/** @type {boolean} Track whether there was an error from vite dev server */
 	let vite_error = false;
-	
-	
+
 	callback(1 / 5, 'booting webcontainer');
 	vm = await WebContainer.boot();
-	// try{
-	// } catch(err){
-	// 	location.reload();
-	// }
 
 	callback(2 / 5, 'writing virtual files');
 	const common = await ready;
@@ -48,21 +53,13 @@ export async function create(stubs, callback) {
 			file: { contents: common.unzip }
 		},
 		...convert_stubs_to_tree(stubs)
-	})
+	});
 
 	callback(3 / 5, 'unzipping files');
-	/** @type {import('@webcontainer/api').WebContainerProcess} */
-	let unzip;
-	try{
-		unzip = await vm.spawn(
-			"node",
-			["unzip.cjs"],
-		);
-	} catch(data){
-		console.error(`[unzip] ${data}`);
-		throw new Error('Failed to initialize WebContainer');
-	}
+	const unzip = await vm.spawn('node', ['unzip.cjs']);
+	unzip.output.pipeTo(console_stream('unzip'));
 	const code = await unzip.exit;
+
 	if (code !== 0) {
 		throw new Error('Failed to initialize WebContainer');
 	}
@@ -76,27 +73,29 @@ export async function create(stubs, callback) {
 			reject(new Error(error.message));
 		});
 
-		const ready_unsub = vm.on('server-ready', (port, base) => {
+		const ready_unsub = vm.on('server-ready', (_port, base) => {
 			ready_unsub();
-			callback(6 / 6, 'ready');
+			callback(5 / 5, 'ready');
 			fulfil(base); // this will be the last thing that happens if everything goes well
 		});
 
 		await run_dev();
 
 		async function run_dev() {
-			try{
-				const process = await vm.spawn('turbo', ['run', 'dev'])
-				process.output
-				const code = await process.exit;
-				if(code !== 0){
-					setTimeout(run_dev, 2000);
-				}
-			} catch(err){
-				vite_error = true;
-				console.error(`[dev] ${err}`);
-			}
+			const process = await vm.spawn('turbo', ['run', 'dev']);
+
+			// TODO differentiate between stdout and stderr (sets `vite_error` to `true`)
+			// https://github.com/stackblitz/webcontainer-core/issues/971
+			process.output.pipeTo(console_stream('dev'));
+
 			// keep restarting dev server (can crash in case of illegal +files for example)
+			process.exit.then((code) => {
+				if (code !== 0) {
+					setTimeout(() => {
+						run_dev();
+					}, 2000);
+				}
+			});
 		}
 	});
 
@@ -110,6 +109,10 @@ export async function create(stubs, callback) {
 			vite_error = false;
 
 			let added_new_file = false;
+
+			const previous_env = /** @type {import('$lib/types').FileStub=} */ (
+				current_stubs.get('/.env')
+			);
 
 			/** @type {import('$lib/types').Stub[]} */
 			const to_write = [];
@@ -170,6 +173,15 @@ export async function create(stubs, callback) {
 				await vm.fs.rm(file, { force: true, recursive: true });
 			}
 
+			// Adding a `.env` file does not restart Vite, but environment variables from `.env`
+			// are not available until Vite is restarted. By creating a dummy `.env` file, it will
+			// be recognized as changed when the real `.env` file is loaded into the Webcontainer.
+			// This will invoke a restart of Vite. Hacky but it works.
+			// TODO: remove when https://github.com/vitejs/vite/issues/12127 is closed
+			if (!previous_env && current_stubs.has('/.env')) {
+				await vm.spawn('touch', ['.env']);
+			}
+
 			await vm.mount(convert_stubs_to_tree(to_write));
 			await promise;
 			await new Promise((f) => setTimeout(f, 200)); // wait for chokidar
@@ -202,7 +214,7 @@ export async function create(stubs, callback) {
 						};
 					}
 
-					tree = /** @type {import('@webcontainer/api').DirectoryEntry} */ (tree[part]).directory;
+					tree = /** @type {import('@webcontainer/api').DirectoryNode} */ (tree[part]).directory;
 				}
 
 				tree[basename] = to_file(stub);
@@ -218,8 +230,6 @@ export async function create(stubs, callback) {
 		},
 		destroy: async () => {
 			vm.teardown();
-			// @ts-ignore
-			vm = null;
 		}
 	};
 }
@@ -266,9 +276,10 @@ function convert_stubs_to_tree(stubs, depth = 1) {
 function to_file(stub) {
 	// special case
 	if (stub.name === '/src/app.html') {
+		console.log(location.origin)
 		const contents = stub.contents.replace(
 			'</head>',
-			'<script type="module" src="/src/__client.js"></script></head>'
+			`<script>var pl = '${location.origin}'</script><script type="module" src="/src/__client.js"></script></head>`
 		);
 
 		return {
