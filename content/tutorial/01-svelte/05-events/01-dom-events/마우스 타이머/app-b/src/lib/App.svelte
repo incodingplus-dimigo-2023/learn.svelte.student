@@ -1,5 +1,6 @@
 <script>
 	let time = 0
+	let realtime = 0;
 	let set = null;
 	let isMouseDown = false
 	let pre = Date.now();
@@ -9,13 +10,14 @@
 	}
 	const mouseup = () => {
 		isMouseDown = false;
-		time = Date.now() - pre + 1
+		time = Date.now() - pre
+		realtime = (time/1000)+1
 	}
 </script>
 
 
 <div on:mousedown={mouseclick} on:mouseup={mouseup}>
-	{isMouseDown ? "마우스를 누르는 중입니다." : `총 ${time / 1000}초 눌렀습니다.`}
+	{isMouseDown ? "마우스를 누르는 중입니다." : `총 ${realtime}초 눌렀습니다.`}
 </div>
 
 <style>
