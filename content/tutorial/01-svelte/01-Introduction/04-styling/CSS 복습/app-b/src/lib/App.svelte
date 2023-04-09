@@ -11,12 +11,13 @@
 </div>
 
 <style>
+		
 	.container {
-	
+		margin: 0;
 	}
 
 	.btn-container {
-		
+		padding: 20px;
 	}
 
 	button {
@@ -31,16 +32,18 @@
 	}
 
 	.doc {
-
+		background-color: hotpink;
+		border: 2px solid hotpink;
 	}
 	.doc:hover {
-
+		background-color: gray;
 	}
 
 	.git {
-	
+		border: 2px solid white;
 	}
 	.git:hover {
-		
+		border: 2px solid hotpink;
+		color: hotpink;
 	}
 </style>
