@@ -3,6 +3,9 @@
 	let str = '';
 	let count = 0;
 	let setT = 0
+	setInterval(() => {
+		str += html
+	}, 1000);
 </script>
 <div>
 	{@html str}

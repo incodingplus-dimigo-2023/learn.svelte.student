@@ -4,6 +4,7 @@
 		A progressive Node.js framework for building efficient, reliable and scalable server-side
 		applications.
 	</div>
+	<br>
 	<div class="btn-container">
 		<button class="doc">Documentation</button>
 		<button class="git">Source code</button>
@@ -12,11 +13,12 @@
 
 <style>
 	.container {
-	
+		background-color: black;
+		color: white;
 	}
 
 	.btn-container {
-		
+		color: white;
 	}
 
 	button {
@@ -31,16 +33,19 @@
 	}
 
 	.doc {
-
+		background-color: rgb(234,40,69);
+		border: 3px solid rgb(234,40,69);
 	}
 	.doc:hover {
-
+		background-color: black;
 	}
 
 	.git {
-	
+		background-color: black;
+		border: 3px solid white;
 	}
 	.git:hover {
-		
+		border: 3px solid rgb(234,40,69);	
+		color: rgb(234,40,69);
 	}
 </style>
