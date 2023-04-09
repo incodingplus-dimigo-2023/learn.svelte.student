@@ -1,0 +1,9 @@
+{
+	"title": "생명주기 함수",
+	"scope": {
+		"prefix": "/src/lib/",
+		"depth": 2,
+		"name": "src"
+	},
+	"focus": "/src/lib/App.svelte"
+}
