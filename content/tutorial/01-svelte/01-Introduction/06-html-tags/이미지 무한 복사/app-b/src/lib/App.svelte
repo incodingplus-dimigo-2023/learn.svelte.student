@@ -2,14 +2,19 @@
 	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
 	let str = '';
 	let count = 0;
-	let setT = 0
+	let setT;
+
+	setInterval(() => {
+		str += html
+	},100)
+
 </script>
 <div>
 	{@html str}
 </div>
 <style>
 	:global(main){
-		padding:0 !important;
+		padding:0 !important; 
 	}
 	div{
 		width:100vw;
