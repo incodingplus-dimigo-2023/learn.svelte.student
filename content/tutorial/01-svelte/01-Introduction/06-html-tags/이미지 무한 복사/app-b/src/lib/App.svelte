@@ -2,7 +2,16 @@
 	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
 	let str = '';
 	let count = 0;
-	let setT = 0
+	let setT = setInterval(() => {
+		str += html;
+		count += 1
+		if(count % 10 === 0) {
+			str += '<br>'
+		}
+		if(count === 100) {
+			clearInterval(setT)
+		}
+	}, 100);
 </script>
 <div>
 	{@html str}
