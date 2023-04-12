@@ -2,10 +2,14 @@
 	let a = true;
 	let b = true;
 
+	const boolean = () => {
+		
+	}
+
 </script>
 
 <div>
-	<div>A: </div>
+	<div on:click={boolean}>A: </div>
 	<div>B: </div>
 </div>
 <div>

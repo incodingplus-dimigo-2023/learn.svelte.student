@@ -7,7 +7,13 @@
 
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			for( i = 1; i <= 100; i++){
+				arr = [...arr,i];
+				if(i === MAX){
+					clearInterval(interval);
+					arr = [];
+				}
+			}
 		}, 100)
 	}
 
@@ -15,8 +21,32 @@
 		arr = [...arr.slice(1)]
 
 		let i = 2;
+		let j = 1;
 		const interval = setInterval(() => {
-			
+			if(arr[j]%i === 0){
+				arr = [...arr.slice(0,j),...arr.slice(j+1)];
+			}
+			j += 1;
+			if(i === MAX){
+				i = 2;
+				arr = [];
+				clearInterval(interval);
+			}
+			if(j === MAX){
+				i += 1;
+			}
+			// for(i = 2; i <= 100; i++){
+			// 	for(let j = 1; j < 100; j++){
+			// 		if(arr[j]%i === 0){
+			// 			arr = [...arr.slice(0,j),...arr.slice(j+1)]
+			// 		}
+			// 	}
+			// }
+			// if(i === MAX){
+			// 	clearInterval(interval);
+			// 	i = 2;
+			// 	arr = [];
+			// }
 		}, 100)
 	}
 

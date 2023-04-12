@@ -3,7 +3,10 @@
 	let multiplicationTable = "";
 
 	$: {
-		
+		for(let i = 0; i < 10; i++){
+			multiplicationTable += `${number} * ${i} = ${number*i}`;
+		}
+		console.log(multiplicationTable);
 	}
 
 	const setNumber = (num) => {
