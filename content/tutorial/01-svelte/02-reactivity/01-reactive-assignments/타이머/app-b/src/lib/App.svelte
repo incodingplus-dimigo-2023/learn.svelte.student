@@ -1,5 +1,6 @@
 <script>
 	let number = 5;
+	
 	let interval = null;
 
 	const reset = () => {
