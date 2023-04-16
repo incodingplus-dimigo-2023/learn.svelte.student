@@ -1,4 +1,5 @@
 <script>
+    import { afterUpdate } from "svelte";
 	import { sampleText } from "./sampleText"
 
 	let targetText = ""
@@ -6,11 +7,15 @@
 	let div
 
 	$: {
-		if(targetText === ""){
+		afterUpdate(()=>{
+			if(targetText === ""){
 			result = sampleText
 		} else {
 			result = sampleText.replaceAll(targetText, `<span>${targetText}</span>`)
+			
 		}
+		})
+		
 	}
 </script>
 
