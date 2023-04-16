@@ -1,12 +1,19 @@
 <script>
-	let isTeacherMode = false
+	let tea = {isTeacherMode: false};
+	
+	function swap(){
+		tea.isTeacherMode = !tea.isTeacherMode;
+	}
 </script>
 
-<input type="password" placeholder="선생님 코드를 입력해주세요">	
-<input type="text" placeholder="아이디를 입력해주세요">
-<input type="password" placeholder="비밀번호를 입력해주세요">	
-<div>
-	선생님 모드: 
+{#if tea.isTeacherMode == true}
+	<input type="password" placeholder="선생님 코드를 입력해주세요">
+{:else}
+	<input type="text" placeholder="아이디를 입력해주세요">
+	<input type="password" placeholder="비밀번호를 입력해주세요">	
+{/if}
+<div on:click={swap}>
+	선생님 모드: {tea.isTeacherMode}
 </div>
 
 <style>
