@@ -1,11 +1,12 @@
 <script>
-    export let name;
-    export let color;
+    export let name ;
+    export let color ;
+
 </script>
 
 <button>
-    <img>
-    <div></div>
+    <img src= "./src/static/{name}.png">
+    <div>{name}</div>
 </button>
 
 <style>
@@ -30,5 +31,6 @@
         font-size: 80px;
         margin-left: 30px;
         font-weight: bold;
+        color: {color};
     }
 </style>

@@ -1,4 +1,7 @@
 <script>
+    export const backgroundColor = 'blue';
+    export const color = 'canvastext';
+    export const padding = '0';
 
 </script>
 
