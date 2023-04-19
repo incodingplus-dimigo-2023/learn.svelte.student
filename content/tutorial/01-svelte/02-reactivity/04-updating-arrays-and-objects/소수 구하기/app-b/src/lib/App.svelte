@@ -4,19 +4,22 @@
 
 	const generate = () => {
 		arr = []
-
 		let i = 1;
 		const interval = setInterval(() => {
-		
+			arr = [...arr, arr.length + 1];
+			if(arr.length === 100) {
+				clearInterval(interval)
+			}
 		}, 100)
 	}
 
 	const calculate = () => {
 		arr = [...arr.slice(1)]
-
 		let i = 2;
 		const interval = setInterval(() => {
-			
+			i += 1;
+			let num = 
+			arr = [arr.splice(num, 1)]
 		}, 100)
 	}
 

@@ -10,14 +10,13 @@
 </script>
 
 <div>
-	<div on:click={ma}>A: {a}</div>
-	<div on:click={mb}>B: {b}</div>
+	<div on:click={ma}>A : {a}</div>
+	<div on:click={mb}>B : {b}</div>
 </div>
 <div>
-	<div>A && B: {a && b}</div>
-	<div>A || B: {a || b}</div>
+	<div>A && B : {a && b}</div>
+	<div>A || B : {a || b}</div>
 </div>
-
 <style>
 	div {
 		font-size: 80px;

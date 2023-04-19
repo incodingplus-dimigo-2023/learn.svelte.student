@@ -17,6 +17,7 @@
 			alert('종료');
 			clearInterval(interval);
 		}
+		
 </script>
 <div>
 	<div class="number">{number}</div>
