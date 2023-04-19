@@ -6,7 +6,7 @@
 
 <button>
     <img src= "./src/static/{name}.png">
-    <div>{name}</div>
+    <div style = "color : {color}; border : 200px, solid,{color};">{name}</div>
 </button>
 
 <style>
@@ -31,6 +31,5 @@
         font-size: 80px;
         margin-left: 30px;
         font-weight: bold;
-        color: {color};
     }
 </style>
