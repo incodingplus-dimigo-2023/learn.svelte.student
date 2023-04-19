@@ -45,7 +45,6 @@ for(let name of arr){
                 file = file.replace(j[0], MAIN.join('\n'));
             }
         }
-        console.log(`${countM}개 변경, ${countH}개 유지`);
         fs.writeFileSync(i[1], file, {encoding:'utf-8'});
     }
     
