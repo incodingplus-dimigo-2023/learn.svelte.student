@@ -1,25 +1,30 @@
 <script>
 	let number = 5;
 	let interval = null;
-
 	const reset = () => {
-		
+		clearInterval(interval);
+		number = 5;
 	};
 	const pause = () => {
-		
+		clearInterval(interval);
 	};
 	const start = () => {
-		
+		interval = setInterval(() => {
+			number -= 1;
+		}, 1000);
 	};
+	$: if(number === 0) {
+			alert('종료');
+			clearInterval(interval);
+		}
 </script>
-
 <div>
 	<div class="number">{number}</div>
 </div>
 <div>
-	<button>시작</button>
-	<button>일시 정지</button>
-	<button>초기화</button>
+	<button on:click={start}>시작</button>
+	<button on:click={pause}>정지</button>
+	<button on:click={reset}>초기화</button>
 </div>
 
 <style>

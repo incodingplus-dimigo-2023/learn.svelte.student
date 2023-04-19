@@ -1,16 +1,21 @@
 <script>
 	let a = true;
 	let b = true;
-
+	const ma = () => {
+		a = !a
+	}
+	const mb = () => {
+		b = !b
+	}
 </script>
 
 <div>
-	<div>A: </div>
-	<div>B: </div>
+	<div on:click={ma}>A: {a}</div>
+	<div on:click={mb}>B: {b}</div>
 </div>
 <div>
-	<div>A && B: </div>
-	<div>A || B: </div>
+	<div>A && B: {a && b}</div>
+	<div>A || B: {a || b}</div>
 </div>
 
 <style>
