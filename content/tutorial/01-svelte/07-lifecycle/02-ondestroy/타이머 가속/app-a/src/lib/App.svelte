@@ -19,7 +19,6 @@
 
 {#each arr as id}
 	<Time on:click={() => {
-		let ind = arr.indexOf(id);
-		arr = [...arr.slice(0, ind), ...arr.slice(ind + 1)];
+		// 지우기 코드 작성
 	}} on:time={tickTime} />
 {/each}
