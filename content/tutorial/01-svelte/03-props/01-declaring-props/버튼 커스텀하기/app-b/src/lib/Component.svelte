@@ -4,9 +4,9 @@
 
 </script>
 
-<button>
-    <img src= "./src/static/{name}.png">
-    <div style = "color : {color}; border : 200px, solid,{color};">{name}</div>
+<button style = "border-color : {color}">
+    <img src= "./static/{name}.png">
+    <div style = "color : {color}">{name}</div>
 </button>
 
 <style>

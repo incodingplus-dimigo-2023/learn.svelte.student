@@ -6,17 +6,23 @@
     let state;
 
     $: {
-       
+       BMI =  weight/((height/100)*(height/100));
     }
 
     
 </script>
 
 <div class="container">
-    <div>신장 : </div>
-    <div>체중 : </div>
-    <div>BMI : </div>
-
+    <div>신장 : {height}</div>
+    <div>체중 : {weight}</div>
+    <div>BMI : {BMI}</div>
+    {#if BMI >= 25}
+    <div class="danger">위험도 : 비만</div>
+    {:else if BMI >= 23}
+    <div class="danger">위험도 : 과체중</div>
+    {:else if BMI <= 18.5}
+    <div class="danger">위험도 : 저체중</div>
+    {/if}
 </div>
 
 <style>
