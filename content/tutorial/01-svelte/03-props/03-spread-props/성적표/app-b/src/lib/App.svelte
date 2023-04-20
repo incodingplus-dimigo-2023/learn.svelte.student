@@ -18,3 +18,9 @@
 		english: 100
 	}]
 </script>
+
+<Component {...arr[0]}/>
+
+<Component {...arr[1]}/>
+
+<Component {...arr[2]}/>
