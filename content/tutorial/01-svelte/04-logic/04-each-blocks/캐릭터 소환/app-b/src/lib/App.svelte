@@ -2,9 +2,9 @@
 	let characters = [];
 	let count = 1;
 	let createCharacter = () => {
-		let HP = Math.floor(Math.random() * 200);
-		let ATK = Math.floor(Math.random() * 200);
-		let DEF = Math.floor(Math.random() * 200);
+		let HP = Math.floor(Math.random() * 201);
+		let ATK = Math.floor(Math.random() * 201);
+		let DEF = Math.floor(Math.random() * 201);
 		let STAR = Math.floor((HP + ATK + DEF) / 100);
 
 		return {
