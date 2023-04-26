@@ -35,18 +35,6 @@
 			if(j === MAX){
 				i += 1;
 			}
-			// for(i = 2; i <= 100; i++){
-			// 	for(let j = 1; j < 100; j++){
-			// 		if(arr[j]%i === 0){
-			// 			arr = [...arr.slice(0,j),...arr.slice(j+1)]
-			// 		}
-			// 	}
-			// }
-			// if(i === MAX){
-			// 	clearInterval(interval);
-			// 	i = 2;
-			// 	arr = [];
-			// }
 		}, 100)
 	}
 

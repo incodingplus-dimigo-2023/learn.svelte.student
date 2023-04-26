@@ -1,10 +1,15 @@
 <script>
 	let time = 0;
 	let isMouseDown = false;
-	let setT;
 </script>
 
-<div on:mousedown={()=>{isMouseDown = true; time = 0; setT = setInterval(()=>{time += 1;},1)}} on:mouseup={()=>{isMouseDown = false; clearInterval(setT)}}>
+<div on:mousedown={()=>{
+	isMouseDown = true;
+	time = Date.now();
+}} on:mouseup={()=>{
+	isMouseDown = false;
+	time = Date.now() - time;
+}}>
 	{isMouseDown ? "마우스를 누르는 중입니다." : `총 ${time / 1000}초 눌렀습니다.`}
 </div>
 

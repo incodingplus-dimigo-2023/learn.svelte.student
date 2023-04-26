@@ -1,22 +1,23 @@
 <script>
+    import { HtmlTag } from "svelte/internal";
+
 	let number = 0;
 	let multiplicationTable = "";
-	const div = document.querySelector(".container");
 
 	$: {
-		for (let i = 0; i < 10; i++) {
-			multiplicationTable += `${number} * ${i} = ${number * i}`;
+		if(number !== 0){
+			multiplicationTable = "";
+		for (let i = 1; i < 10; i++) {
+			multiplicationTable += `${number} * ${i} = ${number * i}<br>`;
 		}
 	}
-	const setNumber = (num) => {
-		number = num;
-		div.innerHTML = multiplicationTable;
-	};
+		
+	}
 </script>
 
 <div>
-	<button on:click={() => setNumber(3)}>3단</button>
-	<button on:click={() => setNumber(6)}>6단</button>
-	<button on:click={() => setNumber(9)}>9단</button>
+	<button on:click={() => number = 3}>3단</button>
+	<button on:click={() => number = 6}>6단</button>
+	<button on:click={() => number = 9}>9단</button>
 </div>
-<div class="container"></div>
+<div class="container">{@html multiplicationTable}</div>
