@@ -5,7 +5,7 @@
     let currentSize = 0
 
     let interval = setInterval(() => {
-        
+        currentSize += 0.5;
     }, 1000)
 
     let percentage = 0;
@@ -13,9 +13,13 @@
 
 </script>
 
+{#if currentSize <= targetSize}
 <div class="container">
     <div style="width: {percentage}%" class="bar"></div>
 </div>
+{:else}
+<div>완료</div>
+{/if}
 
 <style>
     .container {
