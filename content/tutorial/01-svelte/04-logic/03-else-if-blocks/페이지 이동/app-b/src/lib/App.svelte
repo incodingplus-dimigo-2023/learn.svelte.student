@@ -25,7 +25,9 @@
 </div>
 {/if}
 
+{#if page === 1 || page === 2 || page === 3}
 <div>
 	<button on:click={() => page--}>이전 페이지로</button>
 	<button on:click={() => page++}>다음 페이지로</button>
 </div>
+{/if}
