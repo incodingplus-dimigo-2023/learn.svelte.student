@@ -5,18 +5,18 @@
 
 <div 
 	class={arr[0]} 
-	on:click={() => arr[0] = colors[0]} 
-	on:contextmenu={() => arr[0] = ""}
+	on:click|self = {() => arr[0] = colors[0]} 
+	on:contextmenu|preventDefault|self = {() => arr[0] = ""}
 >
 	<div 
 		class={arr[1]} 
-		on:click={() => arr[1] = colors[1]} 
-		on:contextmenu={() => arr[1] = ""}
+		on:click|self = {() => arr[1] = colors[1]} 
+		on:contextmenu|preventDefault|self = {() => arr[1] = ""}
 	>
 		<div 
 			class={arr[2]} 
-			on:click={() => arr[2] = colors[2]} 
-			on:contextmenu={() => arr[2] = ""}>
+			on:click|self = {() => arr[2] = colors[2]} 
+			on:contextmenu|preventDefault|self = {() => arr[2] = ""}>
 		</div>
 	</div>
 </div>
