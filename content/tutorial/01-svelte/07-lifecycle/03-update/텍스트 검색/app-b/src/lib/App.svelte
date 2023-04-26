@@ -1,21 +1,22 @@
 <script>
-    import { afterUpdate } from "svelte";
+    import { afterUpdate, beforeUpdate } from "svelte";
 	import { sampleText } from "./sampleText"
 
 	let targetText = ""
 	let result = sampleText
+	/**@type {Element} */
 	let div
 
 	$: {
-		afterUpdate(()=>{
-			if(targetText === ""){
+		if(targetText === ""){
 			result = sampleText
 		} else {
 			result = sampleText.replaceAll(targetText, `<span>${targetText}</span>`)
-			
 		}
+		afterUpdate(()=>{
+			if(div.children[0] !== undefined)div.children[0].scrollIntoView();
 		})
-		
+		console.log(targetText, 'text')
 	}
 </script>
 
