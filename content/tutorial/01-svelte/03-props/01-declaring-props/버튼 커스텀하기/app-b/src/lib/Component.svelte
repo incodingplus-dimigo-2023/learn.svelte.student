@@ -1,10 +1,11 @@
 <script>
     export let name;
     export let color;
+    
 </script>
 
 <button>
-    <img>
+    <img src = '{name}.png'>
     <div></div>
 </button>
 

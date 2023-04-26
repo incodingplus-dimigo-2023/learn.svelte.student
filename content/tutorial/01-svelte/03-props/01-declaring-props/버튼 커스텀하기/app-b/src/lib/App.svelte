@@ -10,5 +10,5 @@
 	}, {
 		name: "svelte",
 		color: "#FF3E00"
-	}]	
+	}]
 </script>

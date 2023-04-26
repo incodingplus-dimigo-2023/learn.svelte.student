@@ -9,9 +9,12 @@
 		clearInterval(interval);
 	};
 	const start = () => {
-		interval = setInterval(() => {
+		if(interval === null) {
+			interval = setInterval(() => {
 			number -= 1;
 		}, 1000);
+		}
+
 	};
 	$: if(number === 0) {
 			alert('종료');
