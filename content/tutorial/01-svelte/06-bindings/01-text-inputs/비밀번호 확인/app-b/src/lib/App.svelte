@@ -3,15 +3,11 @@
 	let password2;
 
 	let isMatched = false;
-	function is() {
-		if (password1 === password2) {
-			isMatched = true;
-		}
-	}
+	$ : isMatched =  password1 === password2 && password1 && password2;
 </script>
 
-<input type="password" bind:value={password1} on:input={is} />
-<input type="password" bind:value={password2} on:input={is} />
+<input type="password" bind:value={password1} />
+<input type="password" bind:value={password2} />
 
 {#if isMatched}
 	<div>확인</div>
