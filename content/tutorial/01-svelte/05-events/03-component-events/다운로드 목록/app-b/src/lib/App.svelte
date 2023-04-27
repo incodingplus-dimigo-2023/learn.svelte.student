@@ -9,6 +9,7 @@
 		queue = [...queue, {
 			id: num++,
 			size: Math.random() * 30 + 10,
+			//size: Math.random() * 4 + 5,
 			status: "downloading" 
 		}]
 	}
@@ -20,7 +21,12 @@
 	<div>
 		<div>{item.id} 번째 다운로드</div>
 		{#if item.status === "downloading"}
-			<Bar targetSize={item.size} />
+			<Bar targetSize={item.size} 
+				on:Theend = {(e) => {
+					//console.log('main-Theend');
+					item.status = e.detail.text;
+				}}
+			/>
 		{:else}
 			<div>완료</div>
 		{/if}
