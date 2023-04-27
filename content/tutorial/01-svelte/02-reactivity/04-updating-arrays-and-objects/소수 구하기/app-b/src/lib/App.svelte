@@ -4,40 +4,39 @@
 
 	const generate = () => {
 		arr = []
-
-		let i = 1;
+		let i = 0;
 		const interval = setInterval(() => {
-			for( i = 1; i <= 100; i++){
-				arr = [...arr,i];
-				if(i === MAX){
+			i += 1;
+			arr = [...arr,i];
+			if(i === MAX){
 					clearInterval(interval);
-					arr = [];
 				}
-			}
 		}, 100)
+	}
+
+		const isPrime = (n) => {
+		if(n < 2) return false;
+		for(let i = 2; i <= Math.sqrt(n); i++){
+			if(n % i === 0) return false;
+		}
+		return true;
 	}
 
 	const calculate = () => {
-		arr = [...arr.slice(1)]
-
-		let i = 2;
-		let j = 1;
-		const interval = setInterval(() => {
-			if(arr[j]%i === 0){
+		arr = [...arr.slice(1)];
+		let j = 2;
+		const setT = setInterval(()=>{
+			if(j >= arr.length){
+				clearInterval(setT);
+				return;
+			}
+			if(isPrime(arr[j])){
+				j += 1;
+			}else{
 				arr = [...arr.slice(0,j),...arr.slice(j+1)];
 			}
-			j += 1;
-			if(i === MAX){
-				i = 2;
-				arr = [];
-				clearInterval(interval);
-			}
-			if(j === MAX){
-				i += 1;
-			}
-		}, 100)
-	}
-
+		},100)
+	};
 </script>
 
 <button on:click={generate}>생성</button>
