@@ -9,6 +9,7 @@
     });
     onDestroy(() => {
         // setInterval 지우는 코드 작성
+        clearInterval(inter);
     });
 </script>
 <button on:click>가속 지우기</button>

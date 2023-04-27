@@ -20,5 +20,7 @@
 {#each arr as id}
 	<Time on:click={() => {
 		// 지우기 코드 작성
+		//let t = arr[arr.length - 1];
+		arr = arr.slice(0, -1);
 	}} on:time={tickTime} />
 {/each}

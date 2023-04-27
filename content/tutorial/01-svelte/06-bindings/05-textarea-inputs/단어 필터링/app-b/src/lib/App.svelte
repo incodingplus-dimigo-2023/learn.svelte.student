@@ -12,9 +12,7 @@
 		let star = ''
 		for(let i = 0; i < len; i++) {
 			star = star + '*'
-			console.log(star)
 		}
-		console.log(star)
 		return star;
 	}
 
