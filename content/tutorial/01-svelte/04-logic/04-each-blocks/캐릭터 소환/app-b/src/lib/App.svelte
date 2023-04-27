@@ -25,7 +25,7 @@
 	}
 </script>
 
-<button on:click = {() => characters.push(createCharacter())}>소환</button>
+<button on:click = {() => characters = [...characters,createCharacter()]}>소환</button>
 <div class="container">
 	{#each characters as {HP, ATK, DEF, STAR},i}
 		<div class="character">
@@ -33,7 +33,7 @@
 		<div>체력 : {HP}</div>
         <div>공격력 : {ATK}</div>
         <div>방어력 : {DEF}</div>
-        <div>등급 : {STAR}</div>
+        <div>등급 : {'★'.repeat(Number(STAR))}</div>
 		</div>
 	{/each}
 </div>
