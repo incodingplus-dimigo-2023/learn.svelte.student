@@ -15,10 +15,10 @@
 </script>
 
 <div class="container">
-    <div>신장 : '{height}'</div>
-    <div>체중 : '{weight}'</div>
-    <div>BMI : '{BMI}'</div>
-    <div class="danger">'{state}'</div>
+    <div>{height}</div>
+    <div>{weight}</div>
+    <div>BMI : {BMI}</div>
+    <div class="danger">{state}</div>
 </div>
 
 <style>

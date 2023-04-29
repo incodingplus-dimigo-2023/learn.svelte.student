@@ -15,11 +15,10 @@
 
 	const calculate = () => {
 		arr = [...arr.slice(1)]
+
 		let i = 2;
 		const interval = setInterval(() => {
-			i += 1;
-			let num = 
-			arr = [arr.splice(num, 1)]
+			
 		}, 100)
 	}
 

@@ -5,8 +5,8 @@
 </script>
 
 <button>
-    <img src = '{name}.png'>
-    <div></div>
+    <img src = '/{name}.png'>
+    <div>{name}</div>
 </button>
 
 <style>
