@@ -1,11 +1,14 @@
 <script>
 	let html = `<img src='/img.gif' style="width:10%;height:10%;">`;
-	let str = '';
+	let str = ''
 	let count = 0;
-	let setT = 0
+	let setT = ''
+	setInterval(() => {
+		document.querySelector('.div').innerHTML += html;
+	}, 100);
 </script>
-<div>
-	{@html str}
+<div class="div">
+	{@html html}
 </div>
 <style>
 	:global(main){
