@@ -1,11 +1,12 @@
 <script>
-    export let name;
-    export let color;
+    export let name ;
+    export let color ;
+
 </script>
 
-<button>
-    <img>
-    <div></div>
+<button style = "border-color : {color}">
+    <img src= "./static/{name}.png">
+    <div style = "color : {color}">{name}</div>
 </button>
 
 <style>

@@ -1,14 +1,17 @@
 <script>
+    export let backgroundColor = 'blue';
+    export let color = 'canvastext';
+    export let padding = '0';
 
 </script>
 
 <div class="container">
     <div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>backgroundColor : {backgroundColor}</div>
+        <div>color : {color}</div>
+        <div>padding : {padding}</div>
     </div>
-    <div class="view">텍스트</div>
+    <div class="view" style="background-color: {backgroundColor}; color: {color}; padding: {padding}px">텍스트</div>
 </div>
 
 <style>
