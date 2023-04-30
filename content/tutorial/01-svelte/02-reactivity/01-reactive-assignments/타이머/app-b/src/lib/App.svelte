@@ -11,7 +11,7 @@
 	const start = () => {
 		let set = setInterval(() => {
 			number -= 1;
-			if(number < 0){
+			if(number <= 0){
 			clearInterval(set);
 			alert('종료');
 		}
