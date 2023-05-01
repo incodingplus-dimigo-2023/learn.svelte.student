@@ -2,15 +2,27 @@
 	let a = true;
 	let b = true;
 
+	const toga = () =>{
+		a = !a
+	}
+
+	const togb = () =>{
+	b = !b
+	}
+	
+	$: aab = a && b
+	$: abb = a || b
+	
 </script>
 
 <div>
-	<div>A: </div>
-	<div>B: </div>
+	<div on:click ={toga}>A: {a}</div>
+	<div on:click ={togb}>B: {b}</div>
+
 </div>
 <div>
-	<div>A && B: </div>
-	<div>A || B: </div>
+	<div>A && B: {aab} </div>
+	<div>A || B: {abb} </div>
 </div>
 
 <style>

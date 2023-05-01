@@ -2,12 +2,17 @@
 	let arr = []
 	const MAX = 100
 
+$: {
+	console.log(arr)
+}
 	const generate = () => {
-		arr = []
 
-		let i = 1;
 		const interval = setInterval(() => {
-		
+			if(arr.length == MAX){
+						clearInterval(interval)
+			}
+				
+			else{arr = [...arr, arr.length+1]}
 		}, 100)
 	}
 

@@ -37,4 +37,7 @@
 	.flex-container > div {
 		display: flex;
 	}
+	table{
+		border: 1px black;
+	}
 </style>
