@@ -3,11 +3,13 @@
 	const MAX = 100
 
 	const generate = () => {
-		arr = []
 
-		let i = 1;
 		const interval = setInterval(() => {
-		
+			if(arr.length == MAX){
+						clearInterval(interval)
+			}
+				
+			else{arr = [...arr, arr.length+1]}
 		}, 100)
 	}
 
@@ -42,3 +44,4 @@
 	}
 
 </style>
+
