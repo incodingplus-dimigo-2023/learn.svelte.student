@@ -6,7 +6,7 @@
 
 <button>
     <img src = '/{name}.png'>
-    <div>{name}</div>
+    <div style="color: {color};">{name}</div>
 </button>
 
 <style>

@@ -12,4 +12,9 @@
 		height: 192
 	}]
 </script>
-
+{#each arr as {weight, height}, i}
+<Component
+	weight = {arr[i].weight}
+	height = {arr[i].height}
+/>
+{/each}

@@ -5,7 +5,7 @@
 		let HP = Math.floor(Math.random() * 201);
 		let ATK = Math.floor(Math.random() * 201);
 		let DEF = Math.floor(Math.random() * 201);
-		let STAR = (HP + ATK + DEF) % 3;
+		let STAR = Math.floor((HP + ATK + DEF) / 100);
 
 		return {
 			HP,
@@ -16,11 +16,12 @@
 	}
 
 	const spawn = () => {
-		
+		return characters = [...characters, createCharacter()];
 	}
+
 </script>
 
-<button>소환</button>
+<button on:click={spawn}>소환</button>
 <div class="container">
 	<div class="character">
 		{#each characters as {HP, ATK, DEF, STAR}, i}
@@ -28,7 +29,7 @@
 		<div>체력 : {HP}</div>
 		<div>공격력 : {ATK}</div>
 		<div>방어력 : {DEF}</div>
-		<div></div>
+		<div>{'★'.repeat(STAR)}</div>
 		{/each}
 	</div>
 </div>

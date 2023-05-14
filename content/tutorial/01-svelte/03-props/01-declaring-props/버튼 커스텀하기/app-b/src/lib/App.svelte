@@ -1,7 +1,8 @@
 <script>
+// @ts-nocheck
 	import Component from "./Component.svelte";
 
-	const arr = [{
+	let arr = [{
 		name: "react",
 		color: "#61DBFB"
 	}, {
@@ -12,3 +13,9 @@
 		color: "#FF3E00"
 	}]
 </script>
+{#each arr as {name, color}, i}
+<Component
+name = {arr[i].name}
+color = {arr[i].color}
+/>
+{/each}

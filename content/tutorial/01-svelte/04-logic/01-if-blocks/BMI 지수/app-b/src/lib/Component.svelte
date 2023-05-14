@@ -2,18 +2,17 @@
     export let height;
     export let weight;
 
-    let BMI = Number({weight}) / Number(height) ** 2;
+    let BMI = weight / (height/100)**2;
     let state;
 
     $: if(BMI <= 18.5){
-       state = '위험도 저체중'
+       state = '위험도 : 저체중'
     } else if(BMI >= 25){
         state = '위험도 : 비만'
+    } else {
+        state ='';
     }
-
-    
 </script>
-
 <div class="container">
     <div>{height}</div>
     <div>{weight}</div>

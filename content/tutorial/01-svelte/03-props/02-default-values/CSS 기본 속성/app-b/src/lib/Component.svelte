@@ -10,7 +10,7 @@
         <div>color: {color}</div>
         <div>padding: {padding}</div>
     </div>
-    <div class="view">텍스트</div>
+    <div class="view" style="background-color: {bc}; color: {color}; padding: {padding}">텍스트</div>
 </div>
 
 <style>

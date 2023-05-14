@@ -12,16 +12,27 @@
 			}
 		}, 100)
 	}
-
-	const calculate = () => {
+    const calculate = () =>{
 		arr = [...arr.slice(1)]
-
-		let i = 2;
-		const interval = setInterval(() => {
-			
-		}, 100)
+    	let i = 2;
+			const interval = setInterval(() => {
+				let count = 0;
+				for(let j = 1; j <= i; j++) {
+				if(i % j === 0) {
+					count += 1;
+				}
+			}
+			if(count === 2) {
+				i += 1;
+			} else {
+				const index = arr.indexOf(i);
+				if(index > -1) {
+					arr = [...arr.slice(0, index), ...arr.slice(index + 1)];
+				}
+				i++
+			}
+			}, 100)
 	}
-
 </script>
 
 <button on:click={generate}>생성</button>
