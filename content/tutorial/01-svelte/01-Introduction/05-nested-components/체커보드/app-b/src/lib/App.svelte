@@ -37,7 +37,7 @@
 	.flex-container > div {
 		display: flex;
 	}
-	table{
-		border: 1px black;
+	td{
+        padding: 0px;
 	}
 </style>
