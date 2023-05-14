@@ -9,6 +9,7 @@
 		clearInterval(interval);
 	};
 	const start = () => {
+		interval = null
 		if(interval === null) {
 			interval = setInterval(() => {
 			number -= 1;
