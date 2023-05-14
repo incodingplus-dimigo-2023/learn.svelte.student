@@ -1,31 +1,35 @@
 <script>
-	export let targetSize
+	export let target;
 
-    const downloadSpeed = 1
-    let currentSize = 0
+	let size = 0;
+	let gage = 0;
+	
+	const interval = setInterval(() => {
+		size += speed;
+		gage = Math.min(Math.round((size / target) * 100), 100);
 
-    let interval = setInterval(() => {
-        
-    }, 1000)
+		if (size >= target) {
+			clearInterval(interval);
+		}
+	}, 1000);
 
-    let percentage = 0;
-    $: percentage = Math.min(Math.round(currentSize / targetSize * 100), 100) 
-
+	const speed = 1;
 </script>
 
 <div class="container">
-    <div style="width: {percentage}%" class="bar"></div>
+	<div style="width: {gage}%" class="bar"></div>
 </div>
 
 <style>
-    .container {
-        position: relative;
-        border: 1px solid black;
-        height: 30px;
-    }
-    .bar {
-        position: absolute;
-        background: green;
-        height: 100%;
-    }
+	.container {
+		position: relative;
+		border: 1px solid black;
+		height: 30px;
+	}
+
+	.bar {
+		position: absolute;
+		background: green;
+		height: 100%;
+	}
 </style>

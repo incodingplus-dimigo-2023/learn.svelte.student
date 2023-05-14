@@ -3,7 +3,11 @@
 	let multiplicationTable = "";
 
 	$: {
-		
+		for(let i = 0; i < (number * 10); i++){
+			if(i % number === 0){
+				multiplicationTable = multiplicationTable + `${number} x ${i / 3} = ${i}`
+			}
+		}
 	}
 
 	const setNumber = (num) => {

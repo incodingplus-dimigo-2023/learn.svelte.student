@@ -1,12 +1,17 @@
 <script>
 	let isTeacherMode = false
+	function toggle(params) {
+		isTeacherMode = !isTeacherMode
+	}
 </script>
-
-<input type="password" placeholder="선생님 코드를 입력해주세요">	
-<input type="text" placeholder="아이디를 입력해주세요">
-<input type="password" placeholder="비밀번호를 입력해주세요">	
-<div>
-	선생님 모드: 
+{#if isTeacherMode}
+	<input type="password" placeholder="선생님 코드를 입력해주세요">	
+{:else}
+	<input type="text" placeholder="아이디를 입력해주세요">
+	<input type="password" placeholder="비밀번호를 입력해주세요">	
+{/if}
+<div on:mousedown={toggle}>
+	선생님 모드: {isTeacherMode}
 </div>
 
 <style>
