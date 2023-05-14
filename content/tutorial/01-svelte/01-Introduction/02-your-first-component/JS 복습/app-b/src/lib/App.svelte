@@ -11,7 +11,6 @@
         });
     }
     let brr = "";
-    const div = document.querySelector("div");
     let a = 12345 + (54321 * 12345) / 54321;
     for (let j = 1; j <= 100; j++) {
         if (j % 7 === 0) {
