@@ -3,6 +3,10 @@
 	let str = '';
 	let count = 0;
 	let setT = 0
+setInterval(() => {
+    count ++;
+    str = str + html;
+}, 100);
 </script>
 <div>
 	{@html str}
@@ -11,7 +15,7 @@
 	:global(main){
 		padding:0 !important;
 	}
-	div{
+	div{                           
 		width:100vw;
 		height:100vh;
 		display: flex;
